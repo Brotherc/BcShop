@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.brotherchun.bcshop.common.pojo.EasyUIDataGridResult;
 import cn.brotherchun.bcshop.pojo.TbItem;
 import cn.brotherchun.bcshop.service.TbItemService;
 
@@ -19,5 +20,11 @@ public class TbItemController {
 	@RequestMapping("/tbitem/{id}")
 	private @ResponseBody TbItem testFindTbItemById(@PathVariable Long id) throws Exception{
 		return tbItemService.testGetTbItemById(id);
+	}
+	
+	//根据分页信息获取商品信息
+	@RequestMapping("/tbitem/list")
+	public @ResponseBody EasyUIDataGridResult findTbItemList(int page,int rows) throws Exception{
+		return tbItemService.getTbItemList(page, rows);
 	}
 }

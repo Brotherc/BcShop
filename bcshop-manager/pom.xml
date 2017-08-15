@@ -20,7 +20,6 @@
   	<module>bcshop-manager-dao</module>
   	<module>bcshop-manager-interface</module>
   	<module>bcshop-manager-service</module>
-  	<module>bcshop-manager-web</module>
   </modules>
   <!-- 配置tomcat插件 -->
   <build>

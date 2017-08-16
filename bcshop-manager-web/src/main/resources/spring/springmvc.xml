@@ -28,5 +28,6 @@
 	<dubbo:application name="bcshop-manager-web"/>
 	<dubbo:registry protocol="zookeeper" address="192.168.181.152:2181"/>	
 	<dubbo:reference interface="cn.brotherchun.bcshop.service.TbItemService" id="tbItemService" />
+	<dubbo:reference interface="cn.brotherchun.bcshop.service.TbItemCatService" id="tbItemCatService" />
 
 </beans>

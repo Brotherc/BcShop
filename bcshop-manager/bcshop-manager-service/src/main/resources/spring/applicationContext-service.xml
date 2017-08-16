@@ -29,6 +29,6 @@
 	<dubbo:protocol name="dubbo" port="20880" />
 	<!-- 声明需要暴露的服务接口 -->
 	<dubbo:service interface="cn.brotherchun.bcshop.service.TbItemService" ref="tbItemServiceImpl" timeout="300000"/>
-	
+	<dubbo:service interface="cn.brotherchun.bcshop.service.TbItemCatService" ref="tbItemCatServiceImpl" timeout="300000"/>
 	
 </beans>

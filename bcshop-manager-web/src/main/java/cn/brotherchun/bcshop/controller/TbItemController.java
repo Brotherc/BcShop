@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.brotherchun.bcshop.common.pojo.EasyUIDataGridResult;
+import cn.brotherchun.bcshop.common.utils.BcResult;
 import cn.brotherchun.bcshop.pojo.TbItem;
 import cn.brotherchun.bcshop.service.TbItemService;
 
@@ -26,5 +27,11 @@ public class TbItemController {
 	@RequestMapping("/tbitem/list")
 	public @ResponseBody EasyUIDataGridResult findTbItemList(int page,int rows) throws Exception{
 		return tbItemService.getTbItemList(page, rows);
+	}
+	
+	//添加商品
+	@RequestMapping("/tbitem/save")
+	public @ResponseBody BcResult addTbItem(TbItem tbItem,String desc) throws Exception{
+		return tbItemService.addTbItem(tbItem, desc);
 	}
 }

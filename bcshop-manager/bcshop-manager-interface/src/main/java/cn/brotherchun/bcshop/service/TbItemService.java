@@ -1,6 +1,7 @@
 package cn.brotherchun.bcshop.service;
 
 import cn.brotherchun.bcshop.common.pojo.EasyUIDataGridResult;
+import cn.brotherchun.bcshop.common.utils.BcResult;
 import cn.brotherchun.bcshop.pojo.TbItem;
 
 public interface TbItemService {
@@ -20,4 +21,13 @@ public interface TbItemService {
 	 * @throws Exception
 	 */
 	public EasyUIDataGridResult getTbItemList(int page,int rows) throws Exception;
+	
+	/**
+	 * 添加商品与对应商品的描述
+	 * @param tbItem 添加的商品信息
+	 * @param desc 添加的商品描述
+	 * @return 
+	 * @throws Exception
+	 */
+	public BcResult addTbItem(TbItem tbItem,String desc) throws Exception;
 }

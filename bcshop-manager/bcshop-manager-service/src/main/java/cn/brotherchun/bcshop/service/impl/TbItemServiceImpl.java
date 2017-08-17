@@ -72,4 +72,83 @@ public class TbItemServiceImpl implements TbItemService{
 		return BcResult.ok();
 	}
 
+	@Override
+	public BcResult getTbitemDescByTbItemId(Long tbItemId) throws Exception {
+		TbItemDesc tbItemDesc = tbItemDescMapper.selectByPrimaryKey(tbItemId);
+		if(tbItemDesc!=null){
+			return BcResult.build(200, "OK", tbItemDesc);
+		}
+		return BcResult.build(-1, "ERROR");
+	}
+
+	@Override
+	public BcResult getTbItemById(Long tbItemId) throws Exception {
+		TbItem tbItem = tbItemMapper.selectByPrimaryKey(tbItemId);
+		if(tbItem!=null){
+			return BcResult.build(200, "OK", tbItem);
+		}
+		return BcResult.build(-1, "ERROR");
+	}
+
+	@Override
+	public BcResult updateTbItem(TbItem tbItem, String desc) throws Exception {
+		Long id = tbItem.getId();
+		//查询对应修改的商品信息
+		TbItem tbItemDB = tbItemMapper.selectByPrimaryKey(id);
+		//修改页面传过来的商品修改信息
+		tbItemDB.setTitle(tbItem.getTitle());
+		tbItemDB.setSellPoint(tbItem.getSellPoint());
+		tbItemDB.setPrice(tbItem.getPrice());
+		tbItemDB.setNum(tbItem.getNum());
+		tbItemDB.setBarcode(tbItem.getBarcode());
+		tbItemDB.setImage(tbItem.getImage());
+		tbItemDB.setCid(tbItem.getCid());
+		//添加修改商品的更新日期
+		tbItemDB.setUpdated(new Date());
+		//修改商品信息
+		tbItemMapper.updateByPrimaryKey(tbItemDB);
+		//查询对应商品的描述信息
+		TbItemDesc tbItemDesc = tbItemDescMapper.selectByPrimaryKey(id);
+		//更新商品描述
+		tbItemDesc.setItemDesc(desc);
+		//修改商品描述的更新日期
+		tbItemDesc.setUpdated(new Date());
+		//修改商品描述
+		tbItemDescMapper.updateByPrimaryKey(tbItemDesc);
+		return BcResult.ok();
+	}
+
+	@Override
+	public BcResult instockTbItem(Long tbItemId) throws Exception {
+		//查询对应下架的商品信息
+		TbItem tbItem = tbItemMapper.selectByPrimaryKey(tbItemId);
+		//修改商品状态为下架
+		tbItem.setStatus((byte)2);
+		//更新商品信息
+		tbItemMapper.updateByPrimaryKey(tbItem);
+		return BcResult.ok();
+	}
+
+	@Override
+	public BcResult reshelfTbItem(Long tbItemId) throws Exception {
+		//查询对应上架的商品信息
+		TbItem tbItem = tbItemMapper.selectByPrimaryKey(tbItemId);
+		//修改商品状态为正常
+		tbItem.setStatus((byte)1);
+		//更新商品信息
+		tbItemMapper.updateByPrimaryKey(tbItem);
+		return BcResult.ok();
+	}
+
+	@Override
+	public BcResult deleteTbItem(Long tbItemId) throws Exception {
+		//查询对应删除的商品信息
+		TbItem tbItem = tbItemMapper.selectByPrimaryKey(tbItemId);
+		//修改商品状态为删除
+		tbItem.setStatus((byte)3);
+		//更新商品信息
+		tbItemMapper.updateByPrimaryKey(tbItem);
+		return BcResult.ok();
+	}
+
 }

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.brotherchun.bcshop.common.pojo.EasyUIDataGridResult;
@@ -33,5 +34,60 @@ public class TbItemController {
 	@RequestMapping("/tbitem/save")
 	public @ResponseBody BcResult addTbItem(TbItem tbItem,String desc) throws Exception{
 		return tbItemService.addTbItem(tbItem, desc);
+	}
+	
+	// 加载商品描述
+	@RequestMapping("/tbitem/querydesc/{id}")
+	public @ResponseBody BcResult getTbItemDesc(@PathVariable Long id) throws Exception{
+		return tbItemService.getTbitemDescByTbItemId(id);
+	}
+	
+	//加载商品规格
+	@RequestMapping("/tbitem/paramquery/{id}")
+	public @ResponseBody BcResult getTbItem(@PathVariable Long id) throws Exception{
+		return tbItemService.getTbItemById(id);
+	}
+	
+	//修改商品信息
+	@RequestMapping("/tbitem/update")
+	public @ResponseBody BcResult updateTbItem(TbItem tbItem,@RequestParam String desc) throws Exception{
+		System.out.println(desc);
+		return tbItemService.updateTbItem(tbItem, desc);
+	}
+	
+	//下架商品
+	@RequestMapping("/tbitem/instock")
+	public @ResponseBody BcResult instockTbItem(String ids) throws Exception{
+		if(ids!=null){
+			String[] split = ids.split(",");
+			for(String id:split){
+				tbItemService.instockTbItem(Long.valueOf(id));
+			}
+		}
+		return new BcResult().ok();
+	}
+	
+	//上架商品
+	@RequestMapping("/tbitem/reshelf")
+	public @ResponseBody BcResult reshelfTbItem(String ids) throws Exception{
+		if(ids!=null){
+			String[] split = ids.split(",");
+			for(String id:split){
+				tbItemService.reshelfTbItem(Long.valueOf(id));
+			}
+		}
+		return new BcResult().ok();
+	}
+	
+	//删除商品
+	@RequestMapping("/tbitem/delete")
+	public @ResponseBody BcResult deleteTbItem(String ids) throws Exception{
+		if(ids!=null){
+			String[] split = ids.split(",");
+			for(String id:split){
+				tbItemService.deleteTbItem(Long.valueOf(id));
+			}
+		}
+		return new BcResult().ok();
 	}
 }

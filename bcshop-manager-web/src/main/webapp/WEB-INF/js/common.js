@@ -190,7 +190,7 @@ var E3 = {
     },
     
     changeItemParam : function(node,formId){
-    	$.getJSON("/item/cat/query/" + node.id,function(data){
+    	$.getJSON("/item/param/query/itemcatid/" + node.id,function(data){
 			  if(data.status == 200 && data.data){
 				 $("#"+formId+" .params").show();
 				 var paramData = JSON.parse(data.data.paramData);

@@ -25,6 +25,8 @@ public class TbItem implements Serializable{
     private Date created;
 
     private Date updated;
+    
+    private String paramData;
 
     public Long getId() {
         return id;
@@ -113,4 +115,14 @@ public class TbItem implements Serializable{
     public void setUpdated(Date updated) {
         this.updated = updated;
     }
+
+	public String getParamData() {
+		return paramData;
+	}
+
+	public void setParamData(String paramData) {
+		this.paramData = paramData;
+	}
+    
+    
 }

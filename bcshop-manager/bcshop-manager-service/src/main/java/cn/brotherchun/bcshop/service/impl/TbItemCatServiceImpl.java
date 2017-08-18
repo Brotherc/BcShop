@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.brotherchun.bcshop.common.pojo.EasyUITreeNode;
-import cn.brotherchun.bcshop.common.utils.BcResult;
 import cn.brotherchun.bcshop.mapper.TbItemCatMapper;
 import cn.brotherchun.bcshop.pojo.TbItemCat;
 import cn.brotherchun.bcshop.pojo.TbItemCatExample;
@@ -41,16 +40,6 @@ public class TbItemCatServiceImpl implements TbItemCatService{
 		}
 		// 3、返回。
 		return nodeList;
-	}
-
-	@Override
-	public BcResult getTbItemCatByTbItemCatid(Long tbItemCatId)
-			throws Exception {
-		TbItemCat tbItemCat = tbItemCatMapper.selectByPrimaryKey(tbItemCatId);
-		if(tbItemCat!=null){
-			return BcResult.build(200, "OK", tbItemCat);
-		}
-		return BcResult.build(-1, "ERROR");
 	}
 
 }

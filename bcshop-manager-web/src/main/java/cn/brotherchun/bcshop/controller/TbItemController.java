@@ -32,8 +32,8 @@ public class TbItemController {
 	
 	//添加商品
 	@RequestMapping("/tbitem/save")
-	public @ResponseBody BcResult addTbItem(TbItem tbItem,String desc) throws Exception{
-		return tbItemService.addTbItem(tbItem, desc);
+	public @ResponseBody BcResult addTbItem(TbItem tbItem,String desc,String itemParams) throws Exception{
+		return tbItemService.addTbItem(tbItem, desc,itemParams);
 	}
 	
 	// 加载商品描述
@@ -42,7 +42,7 @@ public class TbItemController {
 		return tbItemService.getTbitemDescByTbItemId(id);
 	}
 	
-	//加载商品规格
+	//加载商品信息
 	@RequestMapping("/tbitem/paramquery/{id}")
 	public @ResponseBody BcResult getTbItem(@PathVariable Long id) throws Exception{
 		return tbItemService.getTbItemById(id);
@@ -50,9 +50,8 @@ public class TbItemController {
 	
 	//修改商品信息
 	@RequestMapping("/tbitem/update")
-	public @ResponseBody BcResult updateTbItem(TbItem tbItem,@RequestParam String desc) throws Exception{
-		System.out.println(desc);
-		return tbItemService.updateTbItem(tbItem, desc);
+	public @ResponseBody BcResult updateTbItem(TbItem tbItem,@RequestParam String desc,String itemParams) throws Exception{
+		return tbItemService.updateTbItem(tbItem, desc,itemParams);
 	}
 	
 	//下架商品

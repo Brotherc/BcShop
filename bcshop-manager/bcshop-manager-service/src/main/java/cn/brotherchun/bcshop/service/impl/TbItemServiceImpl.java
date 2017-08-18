@@ -14,9 +14,13 @@ import cn.brotherchun.bcshop.common.utils.BcResult;
 import cn.brotherchun.bcshop.common.utils.IDUtils;
 import cn.brotherchun.bcshop.mapper.TbItemDescMapper;
 import cn.brotherchun.bcshop.mapper.TbItemMapper;
+import cn.brotherchun.bcshop.mapper.TbItemParamItemMapper;
 import cn.brotherchun.bcshop.pojo.TbItem;
 import cn.brotherchun.bcshop.pojo.TbItemDesc;
 import cn.brotherchun.bcshop.pojo.TbItemExample;
+import cn.brotherchun.bcshop.pojo.TbItemParamItem;
+import cn.brotherchun.bcshop.pojo.TbItemParamItemExample;
+import cn.brotherchun.bcshop.pojo.TbItemParamItemExample.Criteria;
 import cn.brotherchun.bcshop.service.TbItemService;
 
 @Service
@@ -27,6 +31,9 @@ public class TbItemServiceImpl implements TbItemService{
 	
 	@Autowired
 	private TbItemDescMapper tbItemDescMapper;
+	
+	@Autowired
+	private TbItemParamItemMapper tbItemParamItemMapper;
 	
 	@Override
 	public TbItem testGetTbItemById(Long id) throws Exception {
@@ -49,7 +56,7 @@ public class TbItemServiceImpl implements TbItemService{
 	}
 
 	@Override
-	public BcResult addTbItem(TbItem tbItem, String desc) throws Exception {
+	public BcResult addTbItem(TbItem tbItem, String desc,String paramData) throws Exception {
 		// 1、生成商品id
 		long id = IDUtils.genItemId();
 		// 2、补全TbItem对象的属性
@@ -69,6 +76,13 @@ public class TbItemServiceImpl implements TbItemService{
 		tbItemDesc.setUpdated(new Date());
 		// 6、向商品描述表插入数据
 		tbItemDescMapper.insert(tbItemDesc);
+		//7、向商品规格参数表插入数据
+		TbItemParamItem tbItemParamItem=new TbItemParamItem();
+		tbItemParamItem.setItemId(id);
+		tbItemParamItem.setParamData(paramData);
+		tbItemParamItem.setCreated(new Date());
+		tbItemParamItem.setUpdated(new Date());
+		tbItemParamItemMapper.insert(tbItemParamItem);
 		return BcResult.ok();
 	}
 
@@ -85,14 +99,21 @@ public class TbItemServiceImpl implements TbItemService{
 	public BcResult getTbItemById(Long tbItemId) throws Exception {
 		TbItem tbItem = tbItemMapper.selectByPrimaryKey(tbItemId);
 		if(tbItem!=null){
+			TbItemParamItemExample tbItemParamItemExample=new TbItemParamItemExample();
+			Criteria criteria = tbItemParamItemExample.createCriteria();
+			criteria.andItemIdEqualTo(tbItemId);
+			List<TbItemParamItem> tbItemParamItemList = tbItemParamItemMapper.selectByExampleWithBLOBs(tbItemParamItemExample);
+			if(tbItemParamItemList!=null&&tbItemParamItemList.size()>0){
+				TbItemParamItem tbItemParamItem = tbItemParamItemList.get(0);
+				tbItem.setParamData(tbItemParamItem.getParamData());
+			}
 			return BcResult.build(200, "OK", tbItem);
 		}
 		return BcResult.build(-1, "ERROR");
 	}
 
 	@Override
-	public BcResult updateTbItem(TbItem tbItem, String desc) throws Exception {
-		System.out.println(desc);
+	public BcResult updateTbItem(TbItem tbItem, String desc,String itemParams) throws Exception {
 		Long id = tbItem.getId();
 		//查询对应修改的商品信息
 		TbItem tbItemDB = tbItemMapper.selectByPrimaryKey(id);
@@ -115,8 +136,18 @@ public class TbItemServiceImpl implements TbItemService{
 		//修改商品描述的更新日期
 		tbItemDesc.setUpdated(new Date());
 		//修改商品描述
-		System.out.println(tbItemDesc.getItemDesc());
 		tbItemDescMapper.updateByPrimaryKey(tbItemDesc);
+		
+		//修改商品规格参数
+		TbItemParamItemExample itemParamItemExample=new TbItemParamItemExample();
+		Criteria criteria = itemParamItemExample.createCriteria();
+		criteria.andItemIdEqualTo(id);
+		List<TbItemParamItem> tbItemParamItemList = tbItemParamItemMapper.selectByExampleWithBLOBs(itemParamItemExample);
+		if(tbItemParamItemList!=null&&tbItemParamItemList.size()>0){
+			TbItemParamItem tbItemParamItem = tbItemParamItemList.get(0);
+			tbItemParamItem.setParamData(itemParams);
+			tbItemParamItemMapper.updateByPrimaryKeyWithBLOBs(tbItemParamItem);
+		}
 		return BcResult.ok();
 	}
 

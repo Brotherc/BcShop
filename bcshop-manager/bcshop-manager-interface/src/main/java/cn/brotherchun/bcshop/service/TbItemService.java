@@ -26,10 +26,11 @@ public interface TbItemService {
 	 * 添加商品与对应商品的描述
 	 * @param tbItem 添加的商品信息
 	 * @param desc 添加的商品描述
-	 * @return 
+	 * @param itemParams 添加的规格参数
+	 * @return
 	 * @throws Exception
 	 */
-	public BcResult addTbItem(TbItem tbItem,String desc) throws Exception;
+	public BcResult addTbItem(TbItem tbItem,String desc,String itemParams) throws Exception;
 	
 	/**
 	 * 根据商品id获取商品描述
@@ -54,7 +55,7 @@ public interface TbItemService {
 	 * @return
 	 * @throws Exception
 	 */
-	public BcResult updateTbItem(TbItem tbItem,String desc) throws Exception;
+	public BcResult updateTbItem(TbItem tbItem,String desc,String itemParams) throws Exception;
 	
 	/**
 	 * 根据商品id下架商品

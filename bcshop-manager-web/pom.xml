@@ -15,6 +15,11 @@
 			<artifactId>bcshop-manager-interface</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>cn.brotherchun</groupId>
+			<artifactId>bcshop-content-interface</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 		<!-- JSP相关 -->
 		<dependency>
 			<groupId>jstl</groupId>

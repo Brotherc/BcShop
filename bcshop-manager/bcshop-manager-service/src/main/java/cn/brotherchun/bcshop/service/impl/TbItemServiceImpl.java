@@ -92,6 +92,7 @@ public class TbItemServiceImpl implements TbItemService{
 
 	@Override
 	public BcResult updateTbItem(TbItem tbItem, String desc) throws Exception {
+		System.out.println(desc);
 		Long id = tbItem.getId();
 		//查询对应修改的商品信息
 		TbItem tbItemDB = tbItemMapper.selectByPrimaryKey(id);
@@ -114,6 +115,7 @@ public class TbItemServiceImpl implements TbItemService{
 		//修改商品描述的更新日期
 		tbItemDesc.setUpdated(new Date());
 		//修改商品描述
+		System.out.println(tbItemDesc.getItemDesc());
 		tbItemDescMapper.updateByPrimaryKey(tbItemDesc);
 		return BcResult.ok();
 	}

@@ -42,4 +42,5 @@
 	<dubbo:reference interface="cn.brotherchun.bcshop.service.TbItemCatService" id="tbItemCatService" />
 	<dubbo:reference interface="cn.brotherchun.bcshop.content.service.TbContentCategoryService" id="tbContentCategoryService" />
 	<dubbo:reference interface="cn.brotherchun.bcshop.service.TbItemParamService" id="tbItemParamService" />
+	<dubbo:reference interface="cn.brotherchun.bcshop.content.service.TbContentService" id="tbContentService" />
 </beans>

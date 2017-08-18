@@ -20,7 +20,7 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	<!-- 引用dubbo服务 -->
-	<dubbo:application name="e3-portal-web"/>
-	<dubbo:registry protocol="zookeeper" address="192.168.25.160:2181"/>	
-	<dubbo:reference interface="cn.brotherchun.bcshop.content.service.ContentService" id="contentService" />
+	<dubbo:application name="bcshop-portal-web"/>
+	<dubbo:registry protocol="zookeeper" address="192.168.181.152:2181"/>	
+	<dubbo:reference interface="cn.brotherchun.bcshop.content.service.TbContentService" id="tbContentService" />
 </beans>

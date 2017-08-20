@@ -22,5 +22,5 @@
 	<!-- 引用dubbo服务 -->
 	<dubbo:application name="bcshop-item-web"/>
 	<dubbo:registry protocol="zookeeper" address="192.168.181.152:2181"/>	
-	<!-- <dubbo:reference interface="cn.brotherchun.bcshop.content.service.TbContentService" id="tbContentService" /> -->
+	<dubbo:reference interface="cn.brotherchun.bcshop.service.TbItemService" id="tbItemService" />
 </beans>

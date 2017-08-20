@@ -3,15 +3,24 @@ package cn.brotherchun.bcshop.service;
 import cn.brotherchun.bcshop.common.pojo.EasyUIDataGridResult;
 import cn.brotherchun.bcshop.common.utils.BcResult;
 import cn.brotherchun.bcshop.pojo.TbItem;
+import cn.brotherchun.bcshop.pojo.TbItemDesc;
 
 public interface TbItemService {
 	/**
-	 *  测试通过商品id获取商品信息
+	 *  通过商品id获取展示商品详情的商品信息
 	 * @param id 商品id
 	 * @return  TbItem 商品信息
 	 * @throws Exception
 	 */
-	public TbItem testGetTbItemById (Long id) throws Exception;
+	public TbItem getItemById (Long id) throws Exception;
+	
+	/**
+	 *  通过商品id获取展示商品详情的商品描述信息
+	 * @param id 商品id
+	 * @return  TbItem 商品信息
+	 * @throws Exception
+	 */
+	public TbItemDesc getItemDescById (Long id) throws Exception;
 	
 	/**
 	 * 根据分页信息获取商品列表

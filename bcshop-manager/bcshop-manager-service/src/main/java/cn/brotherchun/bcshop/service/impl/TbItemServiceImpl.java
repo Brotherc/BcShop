@@ -51,7 +51,7 @@ public class TbItemServiceImpl implements TbItemService{
 	private Destination topicDestination;
 	
 	@Override
-	public TbItem testGetTbItemById(Long id) throws Exception {
+	public TbItem getItemById(Long id) throws Exception {
 		return tbItemMapper.selectByPrimaryKey(id);
 	}
 
@@ -208,6 +208,11 @@ public class TbItemServiceImpl implements TbItemService{
 		//更新商品信息
 		tbItemMapper.updateByPrimaryKey(tbItem);
 		return BcResult.ok();
+	}
+
+	@Override
+	public TbItemDesc getItemDescById(Long id) throws Exception {
+		return tbItemDescMapper.selectByPrimaryKey(id);
 	}
 
 }

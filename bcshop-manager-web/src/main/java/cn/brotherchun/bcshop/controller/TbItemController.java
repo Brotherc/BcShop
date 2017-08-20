@@ -21,7 +21,7 @@ public class TbItemController {
 	//测试通过id获取商品
 	@RequestMapping("/tbitem/{id}")
 	private @ResponseBody TbItem testFindTbItemById(@PathVariable Long id) throws Exception{
-		return tbItemService.testGetTbItemById(id);
+		return tbItemService.getItemById(id);
 	}
 	
 	//根据分页信息获取商品信息

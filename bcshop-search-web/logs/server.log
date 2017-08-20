@@ -1,0 +1,233 @@
+
+
+[INFO ] 2017-08-20 16:05:13,555 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:489)
+FrameworkServlet 'bcshop-search-web': initialization started
+
+
+[INFO ] 2017-08-20 16:05:13,620 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:578)
+Refreshing WebApplicationContext for namespace 'bcshop-search-web-servlet': startup date [Sun Aug 20 16:05:13 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-08-20 16:05:13,704 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+Loading XML bean definitions from class path resource [spring/springmvc.xml]
+
+
+[INFO ] 2017-08-20 16:05:14,303 method:
+using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+
+
+[INFO ] 2017-08-20 16:05:14,439 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from class path resource [conf/resource.properties]
+
+
+[WARN ] 2017-08-20 16:05:14,478 method:org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546)
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'searchController': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.brotherchun.bcshop.search.service.SearchService cn.brotherchun.bcshop.search.controller.SearchController.searchService; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [cn.e3mall.search.exception.GlobalExceptionResolver] for bean with name 'cn.e3mall.search.exception.GlobalExceptionResolver#0' defined in class path resource [spring/springmvc.xml]; nested exception is java.lang.ClassNotFoundException: cn.e3mall.search.exception.GlobalExceptionResolver
+
+
+[ERROR] 2017-08-20 16:05:14,480 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:502)
+Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'searchController': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.brotherchun.bcshop.search.service.SearchService cn.brotherchun.bcshop.search.controller.SearchController.searchService; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [cn.e3mall.search.exception.GlobalExceptionResolver] for bean with name 'cn.e3mall.search.exception.GlobalExceptionResolver#0' defined in class path resource [spring/springmvc.xml]; nested exception is java.lang.ClassNotFoundException: cn.e3mall.search.exception.GlobalExceptionResolver
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:160)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1280)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1193)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1088)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5176)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5460)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.brotherchun.bcshop.search.service.SearchService cn.brotherchun.bcshop.search.controller.SearchController.searchService; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [cn.e3mall.search.exception.GlobalExceptionResolver] for bean with name 'cn.e3mall.search.exception.GlobalExceptionResolver#0' defined in class path resource [spring/springmvc.xml]; nested exception is java.lang.ClassNotFoundException: cn.e3mall.search.exception.GlobalExceptionResolver
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:573)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 29 more
+Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [cn.e3mall.search.exception.GlobalExceptionResolver] for bean with name 'cn.e3mall.search.exception.GlobalExceptionResolver#0' defined in class path resource [spring/springmvc.xml]; nested exception is java.lang.ClassNotFoundException: cn.e3mall.search.exception.GlobalExceptionResolver
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1445)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:445)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:423)
+	at org.springframework.beans.factory.BeanFactoryUtils.beanNamesForTypeIncludingAncestors(BeanFactoryUtils.java:220)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:545)
+	... 31 more
+Caused by: java.lang.ClassNotFoundException: cn.e3mall.search.exception.GlobalExceptionResolver
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1702)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1547)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:250)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:394)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1397)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1344)
+	... 41 more
+
+
+[INFO ] 2017-08-20 16:21:56,213 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:489)
+FrameworkServlet 'bcshop-search-web': initialization started
+
+
+[INFO ] 2017-08-20 16:21:56,405 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:578)
+Refreshing WebApplicationContext for namespace 'bcshop-search-web-servlet': startup date [Sun Aug 20 16:21:56 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-08-20 16:21:56,578 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+Loading XML bean definitions from class path resource [spring/springmvc.xml]
+
+
+[INFO ] 2017-08-20 16:22:00,589 method:
+using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+
+
+[INFO ] 2017-08-20 16:22:00,864 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from class path resource [conf/resource.properties]
+
+
+[INFO ] 2017-08-20 16:22:02,816 method:com.alibaba.dubbo.registry.support.AbstractRegistry.loadProperties(AbstractRegistry.java:232)
+ [DUBBO] Load registry store file C:\Users\Administrator\.dubbo\dubbo-registry-192.168.181.152.cache, data: {cn.brotherchun.bcshop.search.service.SearchItemService=dubbo://192.168.5.8:20882/cn.brotherchun.bcshop.search.service.SearchItemService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchItemService&methods=importAllItems&pid=6176&side=provider&timeout=300000&timestamp=1503217163050 empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchItemService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchItemService&methods=importAllItems&pid=528&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503217219345 empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchItemService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchItemService&methods=importAllItems&pid=528&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503217219345, cn.brotherchun.bcshop.content.service.TbContentCategoryService=dubbo://192.168.5.8:20881/cn.brotherchun.bcshop.content.service.TbContentCategoryService?anyhost=true&application=bcshop-content&dubbo=2.5.3&interface=cn.brotherchun.bcshop.content.service.TbContentCategoryService&methods=updateContentCategory,deleteContentCategory,findTbContentCategoryList,addContentCategory&pid=6664&side=provider&timeout=300000&timestamp=1503216878774 empty://192.168.5.8/cn.brotherchun.bcshop.content.service.TbContentCategoryService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.content.service.TbContentCategoryService&methods=updateContentCategory,deleteContentCategory,findTbContentCategoryList,addContentCategory&pid=528&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503217222212 empty://192.168.5.8/cn.brotherchun.bcshop.content.service.TbContentCategoryService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.content.service.TbContentCategoryService&methods=updateContentCategory,deleteContentCategory,findTbContentCategoryList,addContentCategory&pid=528&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503217222212, cn.brotherchun.bcshop.content.service.TbContentService=dubbo://192.168.5.8:20881/cn.brotherchun.bcshop.content.service.TbContentService?anyhost=true&application=bcshop-content&dubbo=2.5.3&interface=cn.brotherchun.bcshop.content.service.TbContentService&methods=updateTbContent,deleteTbContent,findTbContentListByTbContentCategoryId,addTbContent&pid=6664&side=provider&timeout=300000&timestamp=1503216879388 empty://192.168.5.8/cn.brotherchun.bcshop.content.service.TbContentService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.content.service.TbContentService&methods=updateTbContent,deleteTbContent,findTbContentListByTbContentCategoryId,addTbContent&pid=528&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503217222515 empty://192.168.5.8/cn.brotherchun.bcshop.content.service.TbContentService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.content.service.TbContentService&methods=updateTbContent,deleteTbContent,findTbContentListByTbContentCategoryId,addTbContent&pid=528&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503217222515, cn.brotherchun.bcshop.service.TbItemParamItemService=dubbo://192.168.5.8:20880/cn.brotherchun.bcshop.service.TbItemParamItemService?anyhost=true&application=bcshop-manager&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemParamItemService&methods=getTbItemParamItemByTbItemId&pid=276&side=provider&timeout=300000&timestamp=1503047558838 empty://192.168.5.8/cn.brotherchun.bcshop.service.TbItemParamItemService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemParamItemService&methods=getTbItemParamItemByTbItemId&pid=3036&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503047650139 empty://192.168.5.8/cn.brotherchun.bcshop.service.TbItemParamItemService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemParamItemService&methods=getTbItemParamItemByTbItemId&pid=3036&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503047650139, cn.brotherchun.bcshop.service.TbItemService=dubbo://192.168.5.8:20880/cn.brotherchun.bcshop.service.TbItemService?anyhost=true&application=bcshop-manager&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemService&methods=getTbitemDescByTbItemId,deleteTbItem,addTbItem,updateTbItem,getItemDescById,instockTbItem,getTbItemList,reshelfTbItem,getTbItemById,getItemById&pid=5344&side=provider&timeout=300000&timestamp=1503217088379 empty://192.168.5.8/cn.brotherchun.bcshop.service.TbItemService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemService&methods=deleteTbItem,addTbItem,getTbitemDescByTbItemId,updateTbItem,getItemDescById,instockTbItem,getTbItemList,getTbItemById,reshelfTbItem,getItemById&pid=528&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503217222769 empty://192.168.5.8/cn.brotherchun.bcshop.service.TbItemService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemService&methods=deleteTbItem,addTbItem,getTbitemDescByTbItemId,updateTbItem,getItemDescById,instockTbItem,getTbItemList,getTbItemById,reshelfTbItem,getItemById&pid=528&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503217222769, cn.brotherchun.bcshop.service.TbItemParamService=dubbo://192.168.5.8:20880/cn.brotherchun.bcshop.service.TbItemParamService?anyhost=true&application=bcshop-manager&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemParamService&methods=addTbItemParam,deleteTbItemParam,getTbItemParamByItemCatId,findTbItemParamList&pid=5344&side=provider&timeout=300000&timestamp=1503217089369 empty://192.168.5.8/cn.brotherchun.bcshop.service.TbItemParamService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemParamService&methods=addTbItemParam,deleteTbItemParam,getTbItemParamByItemCatId,findTbItemParamList&pid=528&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503217223106 empty://192.168.5.8/cn.brotherchun.bcshop.service.TbItemParamService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemParamService&methods=addTbItemParam,deleteTbItemParam,getTbItemParamByItemCatId,findTbItemParamList&pid=528&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503217223106, cn.brotherchun.bcshop.service.TbItemCatService=dubbo://192.168.5.8:20880/cn.brotherchun.bcshop.service.TbItemCatService?anyhost=true&application=bcshop-manager&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemCatService&methods=getTbItemCatList&pid=5344&side=provider&timeout=300000&timestamp=1503217089329 empty://192.168.5.8/cn.brotherchun.bcshop.service.TbItemCatService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemCatService&methods=getTbItemCatList&pid=528&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503217222670 empty://192.168.5.8/cn.brotherchun.bcshop.service.TbItemCatService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemCatService&methods=getTbItemCatList&pid=528&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503217222670, cn.brotherchun.bcshop.search.service.SearchService=empty://192.168.5.8:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&category=configurators&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6176&side=provider&timeout=300000&timestamp=1503217164134}, dubbo version: 2.5.3, current host: 127.0.0.1
+
+
+[INFO ] 2017-08-20 16:22:02,859 method:org.I0Itec.zkclient.ZkEventThread.run(ZkEventThread.java:64)
+Starting ZkClient event thread.
+
+
+[INFO ] 2017-08-20 16:22:03,438 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:zookeeper.version=3.4.7-1713338, built on 11/09/2015 04:32 GMT
+
+
+[INFO ] 2017-08-20 16:22:03,439 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:host.name=pc16
+
+
+[INFO ] 2017-08-20 16:22:03,440 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.version=1.7.0_60
+
+
+[INFO ] 2017-08-20 16:22:03,440 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.vendor=Oracle Corporation
+
+
+[INFO ] 2017-08-20 16:22:03,441 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.home=E:\Java\jdk1.7.0_60\jre
+
+
+[INFO ] 2017-08-20 16:22:03,442 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.class.path=E:\apache-maven-3.0.5\boot\plexus-classworlds-2.4.jar
+
+
+[INFO ] 2017-08-20 16:22:03,442 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.library.path=E:\Java\jdk1.7.0_60\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;E:/Java/jdk1.7.0_60/bin/../jre/bin/server;E:/Java/jdk1.7.0_60/bin/../jre/bin;E:/Java/jdk1.7.0_60/bin/../jre/lib/amd64;E:\hadoop\cenos-6.5-hadoop-2.6.4\hadoop-2.6.4\bin;E:\apache-maven-3.0.5\bin;E:\Java\jdk1.7.0_60\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;E:\VisualSVN Server\bin;C:\Program Files\TortoiseSVN\bin;E:\TortoiseGit\bin;E:\MySQL\MySQL Server 5.5\bin;E:\eclipse-jee-kepler-SR2-win32-x86_64\eclipse;;.
+
+
+[INFO ] 2017-08-20 16:22:03,443 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+
+
+[INFO ] 2017-08-20 16:22:03,444 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.compiler=<NA>
+
+
+[INFO ] 2017-08-20 16:22:03,445 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:os.name=Windows 7
+
+
+[INFO ] 2017-08-20 16:22:03,447 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:os.arch=amd64
+
+
+[INFO ] 2017-08-20 16:22:03,448 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:os.version=6.1
+
+
+[INFO ] 2017-08-20 16:22:03,449 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:user.name=Administrator
+
+
+[INFO ] 2017-08-20 16:22:03,449 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:user.home=C:\Users\Administrator
+
+
+[INFO ] 2017-08-20 16:22:03,450 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:user.dir=E:\gitworkspace\BcShop\bcshop-search-web
+
+
+[INFO ] 2017-08-20 16:22:03,454 method:org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)
+Initiating client connection, connectString=192.168.181.152:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@5348b9a
+
+
+[INFO ] 2017-08-20 16:22:04,974 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-20 16:22:05,069 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[INFO ] 2017-08-20 16:22:05,142 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1299)
+Session establishment complete on server 192.168.181.152/192.168.181.152:2181, sessionid = 0x15dfe826d70000c, negotiated timeout = 30000
+
+
+[INFO ] 2017-08-20 16:22:05,147 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (SyncConnected)
+
+
+[INFO ] 2017-08-20 16:22:05,198 method:com.alibaba.dubbo.registry.support.AbstractRegistry.register(AbstractRegistry.java:302)
+ [DUBBO] Register: consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=consumers&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=4940&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503217321388, dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-20 16:22:05,218 method:com.alibaba.dubbo.registry.support.AbstractRegistry.subscribe(AbstractRegistry.java:325)
+ [DUBBO] Subscribe: consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=4940&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503217321388, dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-20 16:22:05,247 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=4940&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503217321388, urls: [dubbo://192.168.5.8:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6176&side=provider&timeout=300000&timestamp=1503217164134, empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=4940&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503217321388, empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=4940&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503217321388], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-20 16:22:06,499 method:com.alibaba.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:287)
+ [DUBBO] Successed connect to server /192.168.5.8:20882 from NettyClient 192.168.5.8 using dubbo version 2.5.3, channel is NettyChannel [channel=[id: 0x8925e049, /192.168.5.8:1726 => /192.168.5.8:20882]], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-20 16:22:06,500 method:com.alibaba.dubbo.remoting.transport.AbstractClient.<init>(AbstractClient.java:105)
+ [DUBBO] Start NettyClient pc16/192.168.5.8 connect to the server /192.168.5.8:20882, dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-20 16:22:07,907 method:com.alibaba.dubbo.config.ReferenceConfig.createProxy(ReferenceConfig.java:423)
+ [DUBBO] Refer dubbo service cn.brotherchun.bcshop.search.service.SearchService from url zookeeper://192.168.181.152:2181/com.alibaba.dubbo.registry.RegistryService?anyhost=true&application=bcshop-search-web&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=4940&revision=0.0.1-SNAPSHOT&side=consumer&timeout=300000&timestamp=1503217321388, dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-20 16:22:11,494 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:527)
+Mapped "{[/search]}" onto public java.lang.String cn.brotherchun.bcshop.search.controller.SearchController.searchItemList(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2017-08-20 16:22:42,842 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:532)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'bcshop-search-web-servlet': startup date [Sun Aug 20 16:21:56 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-08-20 16:22:42,894 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:532)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'bcshop-search-web-servlet': startup date [Sun Aug 20 16:21:56 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-08-20 16:22:45,117 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:508)
+FrameworkServlet 'bcshop-search-web': initialization completed in 48809 ms

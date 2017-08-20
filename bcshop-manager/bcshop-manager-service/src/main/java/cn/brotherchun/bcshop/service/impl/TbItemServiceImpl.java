@@ -3,7 +3,16 @@ package cn.brotherchun.bcshop.service.impl;
 import java.util.Date;
 import java.util.List;
 
+import javax.annotation.Resource;
+import javax.jms.Destination;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Session;
+import javax.jms.TextMessage;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.PageHelper;
@@ -35,6 +44,12 @@ public class TbItemServiceImpl implements TbItemService{
 	@Autowired
 	private TbItemParamItemMapper tbItemParamItemMapper;
 	
+	@Autowired
+	private JmsTemplate jmsTemplate;
+	
+	@Resource
+	private Destination topicDestination;
+	
 	@Override
 	public TbItem testGetTbItemById(Long id) throws Exception {
 		return tbItemMapper.selectByPrimaryKey(id);
@@ -58,7 +73,7 @@ public class TbItemServiceImpl implements TbItemService{
 	@Override
 	public BcResult addTbItem(TbItem tbItem, String desc,String paramData) throws Exception {
 		// 1、生成商品id
-		long id = IDUtils.genItemId();
+		final long id = IDUtils.genItemId();
 		// 2、补全TbItem对象的属性
 		tbItem.setId(id);
 		//商品状态，1-正常，2-下架，3-删除
@@ -83,6 +98,17 @@ public class TbItemServiceImpl implements TbItemService{
 		tbItemParamItem.setCreated(new Date());
 		tbItemParamItem.setUpdated(new Date());
 		tbItemParamItemMapper.insert(tbItemParamItem);
+		//发送商品添加消息
+		//发送商品添加消息
+		jmsTemplate.send(topicDestination, new MessageCreator() {
+			
+			@Override
+			public Message createMessage(Session session) throws JMSException {
+				TextMessage textMessage = session.createTextMessage(id + "");
+				return textMessage;
+			}
+		});
+		//返回成功
 		return BcResult.ok();
 	}
 

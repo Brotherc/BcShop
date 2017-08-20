@@ -6,4 +6,5 @@ import cn.brotherchun.bcshop.common.pojo.SearchItem;
 
 public interface ItemMapper {
 	public List<SearchItem> getItemList() throws Exception;
+	public SearchItem getItemById(long itemId) throws Exception;
 }

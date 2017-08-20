@@ -75,7 +75,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.zookeeper</groupId>
-			<artifactId>zookeeper</artifactId>
+			<artifactId>zookeeper</artifactId> 
 		</dependency>
 		<dependency>
 			<groupId>com.github.sgroschupf</groupId>
@@ -85,6 +85,14 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-all</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+		</dependency>       
 	</dependencies>
 	<!-- 配置tomcat插件 -->
 	<build>

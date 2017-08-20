@@ -13,12 +13,18 @@
 	<context:property-placeholder location="classpath:conf/resource.properties" />
 	
 	<context:component-scan base-package="cn.brotherchun.bcshop.item.controller" />
-	<mvc:annotation-driven />
+	<mvc:annotation-driven /> 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	<!-- 配置freemarker -->
+	<bean id="freemarkerConfig"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="templateLoaderPath" value="/WEB-INF/ftl/" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean> 
 	<!-- 引用dubbo服务 -->
 	<dubbo:application name="bcshop-item-web"/>
 	<dubbo:registry protocol="zookeeper" address="192.168.181.152:2181"/>	

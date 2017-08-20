@@ -20,7 +20,7 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	<!-- 全局异常处理器 -->
-	<bean class="cn.e3mall.search.exception.GlobalExceptionResolver"/>
+	<bean class="cn.brotherchun.bcshop.search.exception.GlobalExceptionResolver"/>
 	<!-- 引用dubbo服务 -->
 	<dubbo:application name="bcshop-search-web"/>
 	<dubbo:registry protocol="zookeeper" address="192.168.181.152:2181"/>	

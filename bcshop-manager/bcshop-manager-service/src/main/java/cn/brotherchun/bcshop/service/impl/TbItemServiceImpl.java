@@ -10,7 +10,9 @@ import javax.jms.Message;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Service;
@@ -18,9 +20,11 @@ import org.springframework.stereotype.Service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
+import cn.brotherchun.bcshop.common.jedis.JedisClient;
 import cn.brotherchun.bcshop.common.pojo.EasyUIDataGridResult;
 import cn.brotherchun.bcshop.common.utils.BcResult;
 import cn.brotherchun.bcshop.common.utils.IDUtils;
+import cn.brotherchun.bcshop.common.utils.JsonUtils;
 import cn.brotherchun.bcshop.mapper.TbItemDescMapper;
 import cn.brotherchun.bcshop.mapper.TbItemMapper;
 import cn.brotherchun.bcshop.mapper.TbItemParamItemMapper;
@@ -34,6 +38,11 @@ import cn.brotherchun.bcshop.service.TbItemService;
 
 @Service
 public class TbItemServiceImpl implements TbItemService{
+	
+	@Value("${REDIS_ITEM_PRE}")
+	private String REDIS_ITEM_PRE;
+	@Value("${ITEM_CACHE_EXPIRE}")
+	private Integer ITEM_CACHE_EXPIRE;
 
 	@Autowired
 	private TbItemMapper tbItemMapper;
@@ -47,12 +56,39 @@ public class TbItemServiceImpl implements TbItemService{
 	@Autowired
 	private JmsTemplate jmsTemplate;
 	
+	@Autowired
+	private JedisClient jedisClient;
+	
 	@Resource
 	private Destination topicDestination;
 	
 	@Override
 	public TbItem getItemById(Long id) throws Exception {
-		return tbItemMapper.selectByPrimaryKey(id);
+		//查询缓存
+		try {
+			String json = jedisClient.get(REDIS_ITEM_PRE+":"+id+":BASE");
+			System.out.println(json);
+			if(StringUtils.isNotBlank(json)){
+				return JsonUtils.jsonToPojo(json, TbItem.class);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		//缓存中没有，查询数据库
+		TbItem tbItem = tbItemMapper.selectByPrimaryKey(id);
+		if(tbItem!=null){
+			//把结果添加到缓存
+			try {
+				System.out.println("添加缓存");
+				jedisClient.set(REDIS_ITEM_PRE+":"+id+":BASE", JsonUtils.objectToJson(tbItem));
+				//设置过期时间
+				jedisClient.expire(REDIS_ITEM_PRE+":"+id+":BASE", ITEM_CACHE_EXPIRE);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return tbItem;
+		}
+		return null;
 	}
 
 	@Override
@@ -212,7 +248,31 @@ public class TbItemServiceImpl implements TbItemService{
 
 	@Override
 	public TbItemDesc getItemDescById(Long id) throws Exception {
-		return tbItemDescMapper.selectByPrimaryKey(id);
+		//查询缓存
+		try {
+			String json = jedisClient.get(REDIS_ITEM_PRE+":"+id+":DESC");
+			System.out.println(json);
+			if(StringUtils.isNotBlank(json)){
+				return JsonUtils.jsonToPojo(json, TbItemDesc.class);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		//缓存中没有，查询数据库
+		TbItemDesc tbItemDesc = tbItemDescMapper.selectByPrimaryKey(id);
+		if(tbItemDesc!=null){
+			//把结果添加到缓存
+			try {
+				System.out.println("添加缓存");
+				jedisClient.set(REDIS_ITEM_PRE+":"+id+":DESC", JsonUtils.objectToJson(tbItemDesc));
+				//设置过期时间
+				jedisClient.expire(REDIS_ITEM_PRE+":"+id+":DESC", ITEM_CACHE_EXPIRE);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return tbItemDesc;
+		}
+		return null;
 	}
 
 }

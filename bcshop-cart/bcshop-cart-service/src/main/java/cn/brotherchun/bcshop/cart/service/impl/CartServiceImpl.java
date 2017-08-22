@@ -89,4 +89,10 @@ public class CartServiceImpl implements CartService{
 		jedisClient.hdel(CartUSER_KEY + ":" + userId, itemId + "");
 		return BcResult.ok();
 	}
+	@Override
+	public BcResult clearCartTbItem(long userId) {
+		//删除购物车信息
+		jedisClient.set(CartUSER_KEY + ":" + userId, "");
+		return BcResult.ok();
+	}
 }

@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -25,7 +26,8 @@ public class LoginController {
 	
 	//跳转登录页面
 	@RequestMapping("/page/login")
-	public String showLogin() throws Exception{
+	public String showLogin(String redirect,Model model) throws Exception{
+		model.addAttribute("redirect", redirect);
 		return "login";
 	}
 	

@@ -50,4 +50,6 @@ public interface CartService {
 	 * @return
 	 */
 	public BcResult deleteCartTbItem(long userId, long itemId);
+	
+	public BcResult clearCartTbItem(long userId);
 }

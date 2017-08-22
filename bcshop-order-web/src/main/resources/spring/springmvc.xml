@@ -19,8 +19,17 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	<!-- 配置拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="cn.brotherchun.bcshop.order.interceptor.LoginInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
 	<!-- 引用dubbo服务 -->
 	<dubbo:application name="bcshop-order-web"/>
 	<dubbo:registry protocol="zookeeper" address="192.168.181.152:2181"/>	
-	<!-- <dubbo:reference interface="cn.brotherchun.bcshop.content.service.TbContentService" id="tbContentService" /> -->
+	<dubbo:reference interface="cn.brotherchun.bcshop.cart.service.impl.CartService" id="cartService" />
+	<dubbo:reference interface="cn.brotherchun.bcshop.sso.service.TokenService" id="tokenService" />
+	<dubbo:reference interface="cn.brotherchun.bcshop.order.service.OrderService" id="orderService" />
 </beans>

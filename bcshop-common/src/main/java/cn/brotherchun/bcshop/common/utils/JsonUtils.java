@@ -1,6 +1,8 @@
 package cn.brotherchun.bcshop.common.utils;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
@@ -61,6 +63,18 @@ public class JsonUtils {
     	try {
     		List<T> list = MAPPER.readValue(jsonData, javaType);
     		return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    	
+    	return null;
+    }
+    
+    public static <K,V>Map<K,V> jsonToMap(String jsonData, Class<K> keyType,Class<V> valueType) {
+    	JavaType javaType = MAPPER.getTypeFactory().constructParametricType(HashMap.class,keyType, valueType);  
+    	try {
+    		Map<K,V> map = MAPPER.readValue(jsonData, javaType);
+    		return map;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

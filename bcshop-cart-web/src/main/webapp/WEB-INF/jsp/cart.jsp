@@ -24,7 +24,7 @@
 <script type="text/javascript" src="/js/common.js"></script>
 
 
-   <title>我的购物车 - 宜立方商城</title>
+   <title>我的购物车 - BC商城</title>
 <body> 
 <jsp:include page="commons/header.jsp" />
 <div class="cartMain">
@@ -66,7 +66,7 @@
 						<div class="pItem pGoods">
 							<div class="cart_pimg">
 								<a target="_blank" title="${cart.title }" href="http://localhost:8086/item/${cart.id }.html">
-								<img src="${cart.images[0] }" style="width: 60px;height: 60px;"/>
+								<img src="${cart.image }" style="width: 60px;height: 60px;"/>
 								</a>
 							</div>
 							<div class="cart_pname">

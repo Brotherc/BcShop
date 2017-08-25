@@ -231,3 +231,1057 @@ Looking for @ControllerAdvice: WebApplicationContext for namespace 'bcshop-searc
 
 [INFO ] 2017-08-20 16:22:45,117 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:508)
 FrameworkServlet 'bcshop-search-web': initialization completed in 48809 ms
+
+
+[INFO ] 2017-08-22 23:54:26,148 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:489)
+FrameworkServlet 'bcshop-search-web': initialization started
+
+
+[INFO ] 2017-08-22 23:54:26,301 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:578)
+Refreshing WebApplicationContext for namespace 'bcshop-search-web-servlet': startup date [Tue Aug 22 23:54:26 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-08-22 23:54:26,409 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+Loading XML bean definitions from class path resource [spring/springmvc.xml]
+
+
+[INFO ] 2017-08-22 23:54:28,256 method:
+using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+
+
+[INFO ] 2017-08-22 23:54:28,500 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from class path resource [conf/resource.properties]
+
+
+[INFO ] 2017-08-22 23:54:29,252 method:com.alibaba.dubbo.registry.support.AbstractRegistry.loadProperties(AbstractRegistry.java:232)
+ [DUBBO] Load registry store file C:\Users\Administrator\.dubbo\dubbo-registry-192.168.181.152.cache, data: {cn.brotherchun.bcshop.search.service.SearchItemService=dubbo://192.168.3.1:20882/cn.brotherchun.bcshop.search.service.SearchItemService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchItemService&methods=importAllItems&pid=5288&side=provider&timeout=300000&timestamp=1503417013610 empty://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchItemService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchItemService&methods=importAllItems&pid=5292&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417161092 empty://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchItemService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchItemService&methods=importAllItems&pid=5292&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417161092, cn.brotherchun.bcshop.content.service.TbContentCategoryService=dubbo://192.168.3.1:20881/cn.brotherchun.bcshop.content.service.TbContentCategoryService?anyhost=true&application=bcshop-content&dubbo=2.5.3&interface=cn.brotherchun.bcshop.content.service.TbContentCategoryService&methods=updateContentCategory,deleteContentCategory,findTbContentCategoryList,addContentCategory&pid=5712&side=provider&timeout=300000&timestamp=1503416475632 empty://192.168.3.1/cn.brotherchun.bcshop.content.service.TbContentCategoryService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.content.service.TbContentCategoryService&methods=updateContentCategory,deleteContentCategory,findTbContentCategoryList,addContentCategory&pid=5292&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417162544 empty://192.168.3.1/cn.brotherchun.bcshop.content.service.TbContentCategoryService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.content.service.TbContentCategoryService&methods=updateContentCategory,deleteContentCategory,findTbContentCategoryList,addContentCategory&pid=5292&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417162544, cn.brotherchun.bcshop.service.TbItemParamService=dubbo://192.168.3.1:20880/cn.brotherchun.bcshop.service.TbItemParamService?anyhost=true&application=bcshop-manager&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemParamService&methods=addTbItemParam,deleteTbItemParam,getTbItemParamByItemCatId,findTbItemParamList&pid=6128&side=provider&timeout=300000&timestamp=1503416754275 empty://192.168.3.1/cn.brotherchun.bcshop.service.TbItemParamService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemParamService&methods=addTbItemParam,deleteTbItemParam,getTbItemParamByItemCatId,findTbItemParamList&pid=5292&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417163002 empty://192.168.3.1/cn.brotherchun.bcshop.service.TbItemParamService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemParamService&methods=addTbItemParam,deleteTbItemParam,getTbItemParamByItemCatId,findTbItemParamList&pid=5292&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417163002, cn.brotherchun.bcshop.content.service.TbContentService=dubbo://192.168.3.1:20881/cn.brotherchun.bcshop.content.service.TbContentService?anyhost=true&application=bcshop-content&dubbo=2.5.3&interface=cn.brotherchun.bcshop.content.service.TbContentService&methods=updateTbContent,deleteTbContent,findTbContentListByTbContentCategoryId,addTbContent&pid=5712&side=provider&timeout=300000&timestamp=1503416477497 empty://192.168.3.1/cn.brotherchun.bcshop.content.service.TbContentService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.content.service.TbContentService&methods=updateTbContent,deleteTbContent,findTbContentListByTbContentCategoryId,addTbContent&pid=5292&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417162602 empty://192.168.3.1/cn.brotherchun.bcshop.content.service.TbContentService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.content.service.TbContentService&methods=updateTbContent,deleteTbContent,findTbContentListByTbContentCategoryId,addTbContent&pid=5292&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417162602, cn.brotherchun.bcshop.service.TbItemService=dubbo://192.168.3.1:20880/cn.brotherchun.bcshop.service.TbItemService?anyhost=true&application=bcshop-manager&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemService&methods=deleteTbItem,addTbItem,getTbitemDescByTbItemId,updateTbItem,getItemDescById,instockTbItem,getTbItemList,reshelfTbItem,getTbItemById,getItemById&pid=6128&side=provider&timeout=300000&timestamp=1503416747735 empty://192.168.3.1/cn.brotherchun.bcshop.service.TbItemService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemService&methods=deleteTbItem,addTbItem,getTbitemDescByTbItemId,updateTbItem,getItemDescById,instockTbItem,getTbItemList,getTbItemById,reshelfTbItem,getItemById&pid=5292&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417162929 empty://192.168.3.1/cn.brotherchun.bcshop.service.TbItemService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemService&methods=deleteTbItem,addTbItem,getTbitemDescByTbItemId,updateTbItem,getItemDescById,instockTbItem,getTbItemList,getTbItemById,reshelfTbItem,getItemById&pid=5292&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417162929, cn.brotherchun.bcshop.sso.service.RegisterService=dubbo://192.168.5.8:20883/cn.brotherchun.bcshop.sso.service.RegisterService?anyhost=true&application=bcshop-sso&dubbo=2.5.3&interface=cn.brotherchun.bcshop.sso.service.RegisterService&methods=register,checkData&pid=5868&side=provider&timeout=300000&timestamp=1503289171768 empty://192.168.5.8/cn.brotherchun.bcshop.sso.service.RegisterService?application=bcshop-sso-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.sso.service.RegisterService&methods=register,checkData&pid=1672&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503289192246 empty://192.168.5.8/cn.brotherchun.bcshop.sso.service.RegisterService?application=bcshop-sso-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.sso.service.RegisterService&methods=register,checkData&pid=1672&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503289192246, cn.brotherchun.bcshop.sso.service.LoginService=dubbo://192.168.5.8:20883/cn.brotherchun.bcshop.sso.service.LoginService?anyhost=true&application=bcshop-sso&dubbo=2.5.3&interface=cn.brotherchun.bcshop.sso.service.LoginService&methods=login&pid=5868&side=provider&timeout=300000&timestamp=1503289172133 empty://192.168.5.8/cn.brotherchun.bcshop.sso.service.LoginService?application=bcshop-sso-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.sso.service.LoginService&methods=login&pid=1672&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503289191826 empty://192.168.5.8/cn.brotherchun.bcshop.sso.service.LoginService?application=bcshop-sso-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.sso.service.LoginService&methods=login&pid=1672&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503289191826, cn.brotherchun.bcshop.service.TbItemCatService=dubbo://192.168.3.1:20880/cn.brotherchun.bcshop.service.TbItemCatService?anyhost=true&application=bcshop-manager&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemCatService&methods=getTbItemCatList&pid=6128&side=provider&timeout=300000&timestamp=1503416754237 empty://192.168.3.1/cn.brotherchun.bcshop.service.TbItemCatService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemCatService&methods=getTbItemCatList&pid=5292&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417162827 empty://192.168.3.1/cn.brotherchun.bcshop.service.TbItemCatService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemCatService&methods=getTbItemCatList&pid=5292&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417162827, cn.brotherchun.bcshop.search.service.SearchService=empty://192.168.3.1:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&category=configurators&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=5288&side=provider&timeout=300000&timestamp=1503417014625, cn.brotherchun.bcshop.service.TbItemParamItemService=dubbo://192.168.5.8:20880/cn.brotherchun.bcshop.service.TbItemParamItemService?anyhost=true&application=bcshop-manager&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemParamItemService&methods=getTbItemParamItemByTbItemId&pid=276&side=provider&timeout=300000&timestamp=1503047558838 empty://192.168.5.8/cn.brotherchun.bcshop.service.TbItemParamItemService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemParamItemService&methods=getTbItemParamItemByTbItemId&pid=3036&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503047650139 empty://192.168.5.8/cn.brotherchun.bcshop.service.TbItemParamItemService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemParamItemService&methods=getTbItemParamItemByTbItemId&pid=3036&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503047650139}, dubbo version: 2.5.3, current host: 127.0.0.1
+
+
+[INFO ] 2017-08-22 23:54:29,293 method:org.I0Itec.zkclient.ZkEventThread.run(ZkEventThread.java:64)
+Starting ZkClient event thread.
+
+
+[INFO ] 2017-08-22 23:54:29,323 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:zookeeper.version=3.4.7-1713338, built on 11/09/2015 04:32 GMT
+
+
+[INFO ] 2017-08-22 23:54:29,323 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:host.name=pc16
+
+
+[INFO ] 2017-08-22 23:54:29,323 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.version=1.7.0_60
+
+
+[INFO ] 2017-08-22 23:54:29,323 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.vendor=Oracle Corporation
+
+
+[INFO ] 2017-08-22 23:54:29,326 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.home=E:\Java\jdk1.7.0_60\jre
+
+
+[INFO ] 2017-08-22 23:54:29,326 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.class.path=E:\apache-maven-3.0.5\boot\plexus-classworlds-2.4.jar
+
+
+[INFO ] 2017-08-22 23:54:29,326 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.library.path=E:\Java\jdk1.7.0_60\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;E:/Java/jdk1.7.0_60/bin/../jre/bin/server;E:/Java/jdk1.7.0_60/bin/../jre/bin;E:/Java/jdk1.7.0_60/bin/../jre/lib/amd64;E:\hadoop\cenos-6.5-hadoop-2.6.4\hadoop-2.6.4\bin;E:\apache-maven-3.0.5\bin;E:\Java\jdk1.7.0_60\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;E:\VisualSVN Server\bin;C:\Program Files\TortoiseSVN\bin;E:\TortoiseGit\bin;E:\MySQL\MySQL Server 5.5\bin;E:\eclipse-jee-kepler-SR2-win32-x86_64\eclipse;;.
+
+
+[INFO ] 2017-08-22 23:54:29,326 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+
+
+[INFO ] 2017-08-22 23:54:29,326 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.compiler=<NA>
+
+
+[INFO ] 2017-08-22 23:54:29,328 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:os.name=Windows 7
+
+
+[INFO ] 2017-08-22 23:54:29,328 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:os.arch=amd64
+
+
+[INFO ] 2017-08-22 23:54:29,331 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:os.version=6.1
+
+
+[INFO ] 2017-08-22 23:54:29,331 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:user.name=Administrator
+
+
+[INFO ] 2017-08-22 23:54:29,331 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:user.home=C:\Users\Administrator
+
+
+[INFO ] 2017-08-22 23:54:29,331 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:user.dir=E:\gitworkspace\BcShop\bcshop-search-web
+
+
+[INFO ] 2017-08-22 23:54:29,333 method:org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)
+Initiating client connection, connectString=192.168.181.152:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@3c86f21c
+
+
+[INFO ] 2017-08-22 23:54:29,956 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-22 23:54:29,958 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[INFO ] 2017-08-22 23:54:29,978 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1299)
+Session establishment complete on server 192.168.181.152/192.168.181.152:2181, sessionid = 0x15e0a8eb15b0006, negotiated timeout = 30000
+
+
+[INFO ] 2017-08-22 23:54:29,983 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (SyncConnected)
+
+
+[INFO ] 2017-08-22 23:54:30,056 method:com.alibaba.dubbo.registry.support.AbstractRegistry.register(AbstractRegistry.java:302)
+ [DUBBO] Register: consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=consumers&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-22 23:54:30,098 method:com.alibaba.dubbo.registry.support.AbstractRegistry.subscribe(AbstractRegistry.java:325)
+ [DUBBO] Subscribe: consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-22 23:54:30,163 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, urls: [dubbo://192.168.3.1:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=5288&side=provider&timeout=300000&timestamp=1503417014625, empty://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, empty://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-22 23:54:30,643 method:com.alibaba.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:287)
+ [DUBBO] Successed connect to server /192.168.3.1:20882 from NettyClient 192.168.3.1 using dubbo version 2.5.3, channel is NettyChannel [channel=[id: 0xff317657, /192.168.3.1:1717 => /192.168.3.1:20882]], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-22 23:54:30,643 method:com.alibaba.dubbo.remoting.transport.AbstractClient.<init>(AbstractClient.java:105)
+ [DUBBO] Start NettyClient pc16/192.168.3.1 connect to the server /192.168.3.1:20882, dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-22 23:54:30,712 method:com.alibaba.dubbo.config.ReferenceConfig.createProxy(ReferenceConfig.java:423)
+ [DUBBO] Refer dubbo service cn.brotherchun.bcshop.search.service.SearchService from url zookeeper://192.168.181.152:2181/com.alibaba.dubbo.registry.RegistryService?anyhost=true&application=bcshop-search-web&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timeout=300000&timestamp=1503417268807, dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-22 23:54:30,894 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:527)
+Mapped "{[/search]}" onto public java.lang.String cn.brotherchun.bcshop.search.controller.SearchController.searchItemList(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2017-08-22 23:54:31,879 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:532)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'bcshop-search-web-servlet': startup date [Tue Aug 22 23:54:26 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-08-22 23:54:31,933 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:532)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'bcshop-search-web-servlet': startup date [Tue Aug 22 23:54:26 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-08-22 23:54:32,113 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:508)
+FrameworkServlet 'bcshop-search-web': initialization completed in 5930 ms
+
+
+[WARN ] 2017-08-23 00:19:04,751 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108)
+Client session timed out, have not heard from server in 20282ms for sessionid 0x15e0a8eb15b0006
+
+
+[INFO ] 2017-08-23 00:19:09,197 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1156)
+Client session timed out, have not heard from server in 20282ms for sessionid 0x15e0a8eb15b0006, closing socket connection and attempting reconnect
+
+
+[INFO ] 2017-08-23 00:19:09,738 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (Disconnected)
+
+
+[INFO ] 2017-08-23 00:19:11,377 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-23 00:19:12,055 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[INFO ] 2017-08-23 00:19:15,588 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (Expired)
+
+
+[INFO ] 2017-08-23 00:19:15,590 method:org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)
+Initiating client connection, connectString=192.168.181.152:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@3c86f21c
+
+
+[WARN ] 2017-08-23 00:19:17,466 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1285)
+Unable to reconnect to ZooKeeper service, session 0x15e0a8eb15b0006 has expired
+
+
+[INFO ] 2017-08-23 00:19:17,479 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1154)
+Unable to reconnect to ZooKeeper service, session 0x15e0a8eb15b0006 has expired, closing socket connection
+
+
+[INFO ] 2017-08-23 00:19:21,465 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-23 00:19:22,933 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[INFO ] 2017-08-23 00:19:22,951 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1299)
+Session establishment complete on server 192.168.181.152/192.168.181.152:2181, sessionid = 0x15e0a8eb15b0014, negotiated timeout = 30000
+
+
+[INFO ] 2017-08-23 00:19:23,166 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (SyncConnected)
+
+
+[INFO ] 2017-08-23 00:19:25,847 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, urls: [empty://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:19:27,218 method:org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:519)
+EventThread shut down for session: 0x15e0a8eb15b0006
+
+
+[INFO ] 2017-08-23 00:19:28,598 method:com.alibaba.dubbo.remoting.transport.netty.NettyChannel.close(NettyChannel.java:135)
+ [DUBBO] Close netty channel [id: 0xff317657, /192.168.3.1:1717 => /192.168.3.1:20882], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:19:29,559 method:com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol$1.disconnected(DubboProtocol.java:130)
+ [DUBBO] disconected from /192.168.3.1:20882,url:dubbo://192.168.3.1:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search-web&check=false&codec=dubbo&dubbo=2.5.3&heartbeat=60000&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timeout=300000&timestamp=1503417268807, dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:19:30,974 method:com.alibaba.dubbo.registry.support.FailbackRegistry.recover(FailbackRegistry.java:282)
+ [DUBBO] Recover register url [consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=consumers&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:19:31,204 method:com.alibaba.dubbo.registry.support.FailbackRegistry.recover(FailbackRegistry.java:292)
+ [DUBBO] Recover subscribe url [consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:19:31,584 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, urls: [dubbo://192.168.3.1:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=5288&side=provider&timeout=300000&timestamp=1503417014625], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:19:32,184 method:com.alibaba.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:287)
+ [DUBBO] Successed connect to server /192.168.3.1:20882 from NettyClient 192.168.3.1 using dubbo version 2.5.3, channel is NettyChannel [channel=[id: 0x954d6bcd, /192.168.3.1:1878 => /192.168.3.1:20882]], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:19:32,780 method:com.alibaba.dubbo.remoting.transport.AbstractClient.<init>(AbstractClient.java:105)
+ [DUBBO] Start NettyClient pc16/192.168.3.1 connect to the server /192.168.3.1:20882, dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:19:32,830 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, urls: [empty://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:19:32,843 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, urls: [empty://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:19:32,850 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, urls: [dubbo://192.168.3.1:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=5288&side=provider&timeout=300000&timestamp=1503417014625], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:19:35,765 method:com.alibaba.dubbo.registry.support.FailbackRegistry.retry(FailbackRegistry.java:309)
+ [DUBBO] Retry register [consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=consumers&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:19:37,051 method:com.alibaba.dubbo.registry.support.FailbackRegistry.retry(FailbackRegistry.java:354)
+ [DUBBO] Retry subscribe {consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807=[com.alibaba.dubbo.registry.integration.RegistryDirectory@2c6b27a2]}, dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:19:37,351 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, urls: [dubbo://192.168.3.1:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=5288&side=provider&timeout=300000&timestamp=1503417014625, empty://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, empty://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[WARN ] 2017-08-23 00:32:06,181 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108)
+Client session timed out, have not heard from server in 27408ms for sessionid 0x15e0a8eb15b0014
+
+
+[INFO ] 2017-08-23 00:32:08,559 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1156)
+Client session timed out, have not heard from server in 27408ms for sessionid 0x15e0a8eb15b0014, closing socket connection and attempting reconnect
+
+
+[INFO ] 2017-08-23 00:32:08,712 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (Disconnected)
+
+
+[INFO ] 2017-08-23 00:32:10,551 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-23 00:32:10,554 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[WARN ] 2017-08-23 00:32:11,152 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1285)
+Unable to reconnect to ZooKeeper service, session 0x15e0a8eb15b0014 has expired
+
+
+[INFO ] 2017-08-23 00:32:11,152 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1154)
+Unable to reconnect to ZooKeeper service, session 0x15e0a8eb15b0014 has expired, closing socket connection
+
+
+[INFO ] 2017-08-23 00:32:11,152 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (Expired)
+
+
+[INFO ] 2017-08-23 00:32:11,309 method:org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)
+Initiating client connection, connectString=192.168.181.152:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@3c86f21c
+
+
+[INFO ] 2017-08-23 00:32:11,317 method:org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:519)
+EventThread shut down for session: 0x15e0a8eb15b0014
+
+
+[INFO ] 2017-08-23 00:32:11,393 method:com.alibaba.dubbo.registry.support.FailbackRegistry.recover(FailbackRegistry.java:282)
+ [DUBBO] Recover register url [consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=consumers&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:32:12,488 method:com.alibaba.dubbo.registry.support.FailbackRegistry.recover(FailbackRegistry.java:292)
+ [DUBBO] Recover subscribe url [consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:32:12,488 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-23 00:32:12,904 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[INFO ] 2017-08-23 00:32:12,909 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1299)
+Session establishment complete on server 192.168.181.152/192.168.181.152:2181, sessionid = 0x15e0a8eb15b0017, negotiated timeout = 30000
+
+
+[INFO ] 2017-08-23 00:32:12,909 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (SyncConnected)
+
+
+[INFO ] 2017-08-23 00:32:12,914 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, urls: [dubbo://192.168.3.1:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=5288&side=provider&timeout=300000&timestamp=1503417014625], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:32:13,054 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, urls: [empty://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:32:13,076 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, urls: [empty://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:32:16,196 method:com.alibaba.dubbo.registry.support.FailbackRegistry.retry(FailbackRegistry.java:309)
+ [DUBBO] Retry register [consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=consumers&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:32:18,855 method:com.alibaba.dubbo.registry.support.FailbackRegistry.retry(FailbackRegistry.java:354)
+ [DUBBO] Retry subscribe {consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807=[com.alibaba.dubbo.registry.integration.RegistryDirectory@2c6b27a2]}, dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 00:32:20,215 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, urls: [dubbo://192.168.3.1:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=5288&side=provider&timeout=300000&timestamp=1503417014625, empty://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, empty://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[WARN ] 2017-08-23 00:50:48,182 method:org.springframework.web.servlet.DispatcherServlet.noHandlerFound(DispatcherServlet.java:1136)
+No mapping found for HTTP request with URI [/html/web/_public/_ajaxStaticMenu.html] in DispatcherServlet with name 'bcshop-search-web'
+
+
+[WARN ] 2017-08-23 02:01:09,527 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108)
+Client session timed out, have not heard from server in 82120ms for sessionid 0x15e0a8eb15b0017
+
+
+[INFO ] 2017-08-23 02:01:14,308 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1156)
+Client session timed out, have not heard from server in 82120ms for sessionid 0x15e0a8eb15b0017, closing socket connection and attempting reconnect
+
+
+[INFO ] 2017-08-23 02:01:14,636 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (Disconnected)
+
+
+[INFO ] 2017-08-23 02:01:17,202 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-23 02:01:18,143 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[WARN ] 2017-08-23 02:01:18,220 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1285)
+Unable to reconnect to ZooKeeper service, session 0x15e0a8eb15b0017 has expired
+
+
+[INFO ] 2017-08-23 02:01:18,220 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1154)
+Unable to reconnect to ZooKeeper service, session 0x15e0a8eb15b0017 has expired, closing socket connection
+
+
+[INFO ] 2017-08-23 02:01:18,220 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (Expired)
+
+
+[INFO ] 2017-08-23 02:01:18,294 method:org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)
+Initiating client connection, connectString=192.168.181.152:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@3c86f21c
+
+
+[INFO ] 2017-08-23 02:01:21,044 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-23 02:01:21,044 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[INFO ] 2017-08-23 02:01:21,057 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1299)
+Session establishment complete on server 192.168.181.152/192.168.181.152:2181, sessionid = 0x15e0a8eb15b0028, negotiated timeout = 30000
+
+
+[INFO ] 2017-08-23 02:01:21,195 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (SyncConnected)
+
+
+[INFO ] 2017-08-23 02:01:21,202 method:org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:519)
+EventThread shut down for session: 0x15e0a8eb15b0017
+
+
+[INFO ] 2017-08-23 02:01:22,285 method:com.alibaba.dubbo.registry.support.FailbackRegistry.recover(FailbackRegistry.java:282)
+ [DUBBO] Recover register url [consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=consumers&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 02:01:22,678 method:com.alibaba.dubbo.registry.support.FailbackRegistry.recover(FailbackRegistry.java:292)
+ [DUBBO] Recover subscribe url [consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 02:01:24,616 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, urls: [dubbo://192.168.3.1:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=5288&side=provider&timeout=300000&timestamp=1503417014625], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 02:01:24,784 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, urls: [empty://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 02:01:24,789 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, urls: [empty://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 02:01:26,369 method:com.alibaba.dubbo.registry.support.FailbackRegistry.retry(FailbackRegistry.java:309)
+ [DUBBO] Retry register [consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=consumers&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 02:01:28,172 method:com.alibaba.dubbo.registry.support.FailbackRegistry.retry(FailbackRegistry.java:354)
+ [DUBBO] Retry subscribe {consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807=[com.alibaba.dubbo.registry.integration.RegistryDirectory@2c6b27a2]}, dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 02:01:28,975 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, urls: [dubbo://192.168.3.1:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=5288&side=provider&timeout=300000&timestamp=1503417014625, empty://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807, empty://192.168.3.1/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6236&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503417268807], dubbo version: 2.5.3, current host: 192.168.3.1
+
+
+[INFO ] 2017-08-23 09:52:44,004 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:489)
+FrameworkServlet 'bcshop-search-web': initialization started
+
+
+[INFO ] 2017-08-23 09:52:44,049 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:578)
+Refreshing WebApplicationContext for namespace 'bcshop-search-web-servlet': startup date [Wed Aug 23 09:52:44 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-08-23 09:52:44,110 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+Loading XML bean definitions from class path resource [spring/springmvc.xml]
+
+
+[INFO ] 2017-08-23 09:52:46,245 method:
+using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+
+
+[INFO ] 2017-08-23 09:52:46,414 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from class path resource [conf/resource.properties]
+
+
+[INFO ] 2017-08-23 09:52:47,111 method:com.alibaba.dubbo.registry.support.AbstractRegistry.loadProperties(AbstractRegistry.java:232)
+ [DUBBO] Load registry store file C:\Users\Administrator\.dubbo\dubbo-registry-192.168.181.152.cache, data: {cn.brotherchun.bcshop.search.service.SearchItemService=dubbo://192.168.5.8:20882/cn.brotherchun.bcshop.search.service.SearchItemService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchItemService&methods=importAllItems&pid=6020&side=provider&timeout=300000&timestamp=1503453029153 empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchItemService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchItemService&methods=importAllItems&pid=6780&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453109370 empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchItemService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchItemService&methods=importAllItems&pid=6780&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453109370, cn.brotherchun.bcshop.content.service.TbContentCategoryService=dubbo://192.168.5.8:20881/cn.brotherchun.bcshop.content.service.TbContentCategoryService?anyhost=true&application=bcshop-content&dubbo=2.5.3&interface=cn.brotherchun.bcshop.content.service.TbContentCategoryService&methods=updateContentCategory,deleteContentCategory,findTbContentCategoryList,addContentCategory&pid=2232&side=provider&timeout=300000&timestamp=1503452343879 empty://192.168.5.8/cn.brotherchun.bcshop.content.service.TbContentCategoryService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.content.service.TbContentCategoryService&methods=updateContentCategory,deleteContentCategory,findTbContentCategoryList,addContentCategory&pid=6780&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453110313 empty://192.168.5.8/cn.brotherchun.bcshop.content.service.TbContentCategoryService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.content.service.TbContentCategoryService&methods=updateContentCategory,deleteContentCategory,findTbContentCategoryList,addContentCategory&pid=6780&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453110313, cn.brotherchun.bcshop.service.TbItemParamService=dubbo://192.168.5.8:20880/cn.brotherchun.bcshop.service.TbItemParamService?anyhost=true&application=bcshop-manager&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemParamService&methods=addTbItemParam,deleteTbItemParam,getTbItemParamByItemCatId,findTbItemParamList&pid=3604&side=provider&timeout=300000&timestamp=1503452770594 empty://192.168.5.8/cn.brotherchun.bcshop.service.TbItemParamService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemParamService&methods=addTbItemParam,deleteTbItemParam,getTbItemParamByItemCatId,findTbItemParamList&pid=6780&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453110618 empty://192.168.5.8/cn.brotherchun.bcshop.service.TbItemParamService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemParamService&methods=addTbItemParam,deleteTbItemParam,getTbItemParamByItemCatId,findTbItemParamList&pid=6780&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453110618, cn.brotherchun.bcshop.content.service.TbContentService=dubbo://192.168.5.8:20881/cn.brotherchun.bcshop.content.service.TbContentService?anyhost=true&application=bcshop-content&dubbo=2.5.3&interface=cn.brotherchun.bcshop.content.service.TbContentService&methods=updateTbContent,deleteTbContent,findTbContentListByTbContentCategoryId,addTbContent&pid=2232&side=provider&timeout=300000&timestamp=1503452344849 empty://192.168.5.8/cn.brotherchun.bcshop.content.service.TbContentService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.content.service.TbContentService&methods=updateTbContent,deleteTbContent,findTbContentListByTbContentCategoryId,addTbContent&pid=6780&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453110385 empty://192.168.5.8/cn.brotherchun.bcshop.content.service.TbContentService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.content.service.TbContentService&methods=updateTbContent,deleteTbContent,findTbContentListByTbContentCategoryId,addTbContent&pid=6780&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453110385, cn.brotherchun.bcshop.service.TbItemService=dubbo://192.168.5.8:20880/cn.brotherchun.bcshop.service.TbItemService?anyhost=true&application=bcshop-manager&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemService&methods=getTbitemDescByTbItemId,deleteTbItem,addTbItem,updateTbItem,getItemDescById,instockTbItem,getTbItemList,reshelfTbItem,getTbItemById,getItemById&pid=3604&side=provider&timeout=300000&timestamp=1503452769422 empty://192.168.5.8/cn.brotherchun.bcshop.service.TbItemService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemService&methods=getTbitemDescByTbItemId,deleteTbItem,addTbItem,updateTbItem,getItemDescById,instockTbItem,getTbItemList,getTbItemById,reshelfTbItem,getItemById&pid=6780&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453110563 empty://192.168.5.8/cn.brotherchun.bcshop.service.TbItemService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemService&methods=getTbitemDescByTbItemId,deleteTbItem,addTbItem,updateTbItem,getItemDescById,instockTbItem,getTbItemList,getTbItemById,reshelfTbItem,getItemById&pid=6780&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453110563, cn.brotherchun.bcshop.sso.service.RegisterService=dubbo://192.168.5.8:20883/cn.brotherchun.bcshop.sso.service.RegisterService?anyhost=true&application=bcshop-sso&dubbo=2.5.3&interface=cn.brotherchun.bcshop.sso.service.RegisterService&methods=register,checkData&pid=5868&side=provider&timeout=300000&timestamp=1503289171768 empty://192.168.5.8/cn.brotherchun.bcshop.sso.service.RegisterService?application=bcshop-sso-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.sso.service.RegisterService&methods=register,checkData&pid=1672&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503289192246 empty://192.168.5.8/cn.brotherchun.bcshop.sso.service.RegisterService?application=bcshop-sso-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.sso.service.RegisterService&methods=register,checkData&pid=1672&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503289192246, cn.brotherchun.bcshop.sso.service.LoginService=dubbo://192.168.5.8:20883/cn.brotherchun.bcshop.sso.service.LoginService?anyhost=true&application=bcshop-sso&dubbo=2.5.3&interface=cn.brotherchun.bcshop.sso.service.LoginService&methods=login&pid=5868&side=provider&timeout=300000&timestamp=1503289172133 empty://192.168.5.8/cn.brotherchun.bcshop.sso.service.LoginService?application=bcshop-sso-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.sso.service.LoginService&methods=login&pid=1672&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503289191826 empty://192.168.5.8/cn.brotherchun.bcshop.sso.service.LoginService?application=bcshop-sso-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.sso.service.LoginService&methods=login&pid=1672&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503289191826, cn.brotherchun.bcshop.service.TbItemCatService=dubbo://192.168.5.8:20880/cn.brotherchun.bcshop.service.TbItemCatService?anyhost=true&application=bcshop-manager&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemCatService&methods=getTbItemCatList&pid=3604&side=provider&timeout=300000&timestamp=1503452770549 empty://192.168.5.8/cn.brotherchun.bcshop.service.TbItemCatService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemCatService&methods=getTbItemCatList&pid=6780&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453110508 empty://192.168.5.8/cn.brotherchun.bcshop.service.TbItemCatService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemCatService&methods=getTbItemCatList&pid=6780&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453110508, cn.brotherchun.bcshop.search.service.SearchService=empty://192.168.5.8:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&category=configurators&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6020&side=provider&timeout=300000&timestamp=1503453029840, cn.brotherchun.bcshop.service.TbItemParamItemService=dubbo://192.168.5.8:20880/cn.brotherchun.bcshop.service.TbItemParamItemService?anyhost=true&application=bcshop-manager&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemParamItemService&methods=getTbItemParamItemByTbItemId&pid=276&side=provider&timeout=300000&timestamp=1503047558838 empty://192.168.5.8/cn.brotherchun.bcshop.service.TbItemParamItemService?application=bcshop-manager-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemParamItemService&methods=getTbItemParamItemByTbItemId&pid=3036&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503047650139 empty://192.168.5.8/cn.brotherchun.bcshop.service.TbItemParamItemService?application=bcshop-manager-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.service.TbItemParamItemService&methods=getTbItemParamItemByTbItemId&pid=3036&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503047650139}, dubbo version: 2.5.3, current host: 127.0.0.1
+
+
+[INFO ] 2017-08-23 09:52:47,131 method:org.I0Itec.zkclient.ZkEventThread.run(ZkEventThread.java:64)
+Starting ZkClient event thread.
+
+
+[INFO ] 2017-08-23 09:52:47,144 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:zookeeper.version=3.4.7-1713338, built on 11/09/2015 04:32 GMT
+
+
+[INFO ] 2017-08-23 09:52:47,146 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:host.name=pc16
+
+
+[INFO ] 2017-08-23 09:52:47,146 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.version=1.7.0_60
+
+
+[INFO ] 2017-08-23 09:52:47,146 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.vendor=Oracle Corporation
+
+
+[INFO ] 2017-08-23 09:52:47,146 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.home=E:\Java\jdk1.7.0_60\jre
+
+
+[INFO ] 2017-08-23 09:52:47,146 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.class.path=E:\apache-maven-3.0.5\boot\plexus-classworlds-2.4.jar
+
+
+[INFO ] 2017-08-23 09:52:47,146 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.library.path=E:\Java\jdk1.7.0_60\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;E:/Java/jdk1.7.0_60/bin/../jre/bin/server;E:/Java/jdk1.7.0_60/bin/../jre/bin;E:/Java/jdk1.7.0_60/bin/../jre/lib/amd64;E:\hadoop\cenos-6.5-hadoop-2.6.4\hadoop-2.6.4\bin;E:\apache-maven-3.0.5\bin;E:\Java\jdk1.7.0_60\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;E:\VisualSVN Server\bin;C:\Program Files\TortoiseSVN\bin;E:\TortoiseGit\bin;E:\MySQL\MySQL Server 5.5\bin;E:\eclipse-jee-kepler-SR2-win32-x86_64\eclipse;;.
+
+
+[INFO ] 2017-08-23 09:52:47,146 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+
+
+[INFO ] 2017-08-23 09:52:47,146 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:java.compiler=<NA>
+
+
+[INFO ] 2017-08-23 09:52:47,146 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:os.name=Windows 7
+
+
+[INFO ] 2017-08-23 09:52:47,149 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:os.arch=amd64
+
+
+[INFO ] 2017-08-23 09:52:47,149 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:os.version=6.1
+
+
+[INFO ] 2017-08-23 09:52:47,149 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:user.name=Administrator
+
+
+[INFO ] 2017-08-23 09:52:47,149 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:user.home=C:\Users\Administrator
+
+
+[INFO ] 2017-08-23 09:52:47,149 method:org.apache.zookeeper.Environment.logEnv(Environment.java:100)
+Client environment:user.dir=E:\gitworkspace\BcShop\bcshop-search-web
+
+
+[INFO ] 2017-08-23 09:52:47,149 method:org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)
+Initiating client connection, connectString=192.168.181.152:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@e3ddd06
+
+
+[INFO ] 2017-08-23 09:52:47,421 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-23 09:52:47,424 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[INFO ] 2017-08-23 09:52:47,440 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1299)
+Session establishment complete on server 192.168.181.152/192.168.181.152:2181, sessionid = 0x15e0ca4be8b0005, negotiated timeout = 30000
+
+
+[INFO ] 2017-08-23 09:52:47,440 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (SyncConnected)
+
+
+[INFO ] 2017-08-23 09:52:47,465 method:com.alibaba.dubbo.registry.support.AbstractRegistry.register(AbstractRegistry.java:302)
+ [DUBBO] Register: consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=consumers&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 09:52:47,482 method:com.alibaba.dubbo.registry.support.AbstractRegistry.subscribe(AbstractRegistry.java:325)
+ [DUBBO] Subscribe: consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 09:52:47,515 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [dubbo://192.168.5.8:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6020&side=provider&timeout=300000&timestamp=1503453029840, empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 09:52:47,752 method:com.alibaba.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:287)
+ [DUBBO] Successed connect to server /192.168.5.8:20882 from NettyClient 192.168.5.8 using dubbo version 2.5.3, channel is NettyChannel [channel=[id: 0x7bae382c, /192.168.5.8:1399 => /192.168.5.8:20882]], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 09:52:47,752 method:com.alibaba.dubbo.remoting.transport.AbstractClient.<init>(AbstractClient.java:105)
+ [DUBBO] Start NettyClient pc16/192.168.5.8 connect to the server /192.168.5.8:20882, dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 09:52:47,820 method:com.alibaba.dubbo.config.ReferenceConfig.createProxy(ReferenceConfig.java:423)
+ [DUBBO] Refer dubbo service cn.brotherchun.bcshop.search.service.SearchService from url zookeeper://192.168.181.152:2181/com.alibaba.dubbo.registry.RegistryService?anyhost=true&application=bcshop-search-web&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timeout=300000&timestamp=1503453166789, dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 09:52:48,037 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:527)
+Mapped "{[/search]}" onto public java.lang.String cn.brotherchun.bcshop.search.controller.SearchController.searchItemList(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2017-08-23 09:52:49,397 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:532)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'bcshop-search-web-servlet': startup date [Wed Aug 23 09:52:44 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-08-23 09:52:49,440 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:532)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'bcshop-search-web-servlet': startup date [Wed Aug 23 09:52:44 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-08-23 09:52:49,631 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:508)
+FrameworkServlet 'bcshop-search-web': initialization completed in 5599 ms
+
+
+[WARN ] 2017-08-23 10:21:42,451 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108)
+Client session timed out, have not heard from server in 26246ms for sessionid 0x15e0ca4be8b0005
+
+
+[INFO ] 2017-08-23 10:21:42,766 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1156)
+Client session timed out, have not heard from server in 26246ms for sessionid 0x15e0ca4be8b0005, closing socket connection and attempting reconnect
+
+
+[INFO ] 2017-08-23 10:21:42,996 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (Disconnected)
+
+
+[INFO ] 2017-08-23 10:21:45,330 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-23 10:21:45,342 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[INFO ] 2017-08-23 10:21:45,541 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1299)
+Session establishment complete on server 192.168.181.152/192.168.181.152:2181, sessionid = 0x15e0ca4be8b0005, negotiated timeout = 30000
+
+
+[INFO ] 2017-08-23 10:21:45,541 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (SyncConnected)
+
+
+[WARN ] 2017-08-23 10:22:37,941 method:org.springframework.web.servlet.DispatcherServlet.noHandlerFound(DispatcherServlet.java:1136)
+No mapping found for HTTP request with URI [/html/web/_public/_ajaxStaticMenu.html] in DispatcherServlet with name 'bcshop-search-web'
+
+
+[INFO ] 2017-08-23 10:44:11,275 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1158)
+Unable to read additional data from server sessionid 0x15e0ca4be8b0005, likely server has closed socket, closing socket connection and attempting reconnect
+
+
+[INFO ] 2017-08-23 10:44:18,553 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (Disconnected)
+
+
+[INFO ] 2017-08-23 10:44:20,851 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-23 10:44:21,825 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[WARN ] 2017-08-23 10:44:21,972 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1285)
+Unable to reconnect to ZooKeeper service, session 0x15e0ca4be8b0005 has expired
+
+
+[INFO ] 2017-08-23 10:44:22,003 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1154)
+Unable to reconnect to ZooKeeper service, session 0x15e0ca4be8b0005 has expired, closing socket connection
+
+
+[INFO ] 2017-08-23 10:44:21,972 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (Expired)
+
+
+[INFO ] 2017-08-23 10:44:22,154 method:org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)
+Initiating client connection, connectString=192.168.181.152:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@e3ddd06
+
+
+[INFO ] 2017-08-23 10:44:36,407 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-23 10:44:57,740 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[INFO ] 2017-08-23 10:45:01,958 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1299)
+Session establishment complete on server 192.168.181.152/192.168.181.152:2181, sessionid = 0x15e0ca4be8b0014, negotiated timeout = 30000
+
+
+[INFO ] 2017-08-23 10:45:01,991 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (SyncConnected)
+
+
+[INFO ] 2017-08-23 10:45:34,055 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 10:45:45,165 method:org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:519)
+EventThread shut down for session: 0x15e0ca4be8b0005
+
+
+[INFO ] 2017-08-23 10:45:51,519 method:com.alibaba.dubbo.remoting.transport.netty.NettyChannel.close(NettyChannel.java:135)
+ [DUBBO] Close netty channel [id: 0x7bae382c, /192.168.5.8:1399 => /192.168.5.8:20882], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[WARN ] 2017-08-23 10:46:02,143 method:com.alibaba.dubbo.registry.support.AbstractRegistry.doSaveProperties(AbstractRegistry.java:221)
+ [DUBBO] Failed to save registry store file, cause: Can not lock the registry cache file C:\Users\Administrator\.dubbo\dubbo-registry-192.168.181.152.cache, ignore and retry later, maybe multi java process use the file, please config: dubbo.registry.file=xxx.properties, dubbo version: 2.5.3, current host: 192.168.5.8
+java.io.IOException: Can not lock the registry cache file C:\Users\Administrator\.dubbo\dubbo-registry-192.168.181.152.cache, ignore and retry later, maybe multi java process use the file, please config: dubbo.registry.file=xxx.properties
+	at com.alibaba.dubbo.registry.support.AbstractRegistry.doSaveProperties(AbstractRegistry.java:193)
+	at com.alibaba.dubbo.registry.support.AbstractRegistry$SaveProperties.run(AbstractRegistry.java:150)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+[INFO ] 2017-08-23 10:46:03,594 method:com.alibaba.dubbo.registry.support.FailbackRegistry.recover(FailbackRegistry.java:282)
+ [DUBBO] Recover register url [consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=consumers&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 10:46:04,001 method:com.alibaba.dubbo.registry.support.FailbackRegistry.recover(FailbackRegistry.java:292)
+ [DUBBO] Recover subscribe url [consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 10:46:02,633 method:com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol$1.disconnected(DubboProtocol.java:130)
+ [DUBBO] disconected from /192.168.5.8:20882,url:dubbo://192.168.5.8:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search-web&check=false&codec=dubbo&dubbo=2.5.3&heartbeat=60000&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timeout=300000&timestamp=1503453166789, dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 10:46:04,139 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [dubbo://192.168.5.8:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6020&side=provider&timeout=300000&timestamp=1503453029840], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 10:46:07,416 method:com.alibaba.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:287)
+ [DUBBO] Successed connect to server /192.168.5.8:20882 from NettyClient 192.168.5.8 using dubbo version 2.5.3, channel is NettyChannel [channel=[id: 0xe48294a4, /192.168.5.8:1765 => /192.168.5.8:20882]], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 10:46:08,777 method:com.alibaba.dubbo.remoting.transport.AbstractClient.<init>(AbstractClient.java:105)
+ [DUBBO] Start NettyClient pc16/192.168.5.8 connect to the server /192.168.5.8:20882, dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 10:46:08,824 method:com.alibaba.dubbo.registry.support.FailbackRegistry.retry(FailbackRegistry.java:309)
+ [DUBBO] Retry register [consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=consumers&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 10:46:12,816 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 10:46:13,011 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 10:46:13,042 method:com.alibaba.dubbo.registry.support.FailbackRegistry.retry(FailbackRegistry.java:354)
+ [DUBBO] Retry subscribe {consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789=[com.alibaba.dubbo.registry.integration.RegistryDirectory@605e3669]}, dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 10:46:17,137 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [dubbo://192.168.5.8:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6020&side=provider&timeout=300000&timestamp=1503453029840], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 10:46:21,793 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [dubbo://192.168.5.8:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6020&side=provider&timeout=300000&timestamp=1503453029840, empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 11:07:53,975 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 11:08:12,914 method:com.alibaba.dubbo.remoting.transport.netty.NettyChannel.close(NettyChannel.java:135)
+ [DUBBO] Close netty channel [id: 0xe48294a4, /192.168.5.8:1765 => /192.168.5.8:20882], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 11:08:26,141 method:com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol$1.disconnected(DubboProtocol.java:130)
+ [DUBBO] disconected from /192.168.5.8:20882,url:dubbo://192.168.5.8:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search-web&check=false&codec=dubbo&dubbo=2.5.3&heartbeat=60000&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timeout=300000&timestamp=1503453166789, dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 11:08:44,062 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [dubbo://192.168.5.8:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6020&side=provider&timeout=300000&timestamp=1503453029840], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 11:09:01,315 method:com.alibaba.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:287)
+ [DUBBO] Successed connect to server /192.168.5.8:20882 from NettyClient 192.168.5.8 using dubbo version 2.5.3, channel is NettyChannel [channel=[id: 0xcb5c012d, /192.168.5.8:1846 => /192.168.5.8:20882]], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 11:09:02,507 method:com.alibaba.dubbo.remoting.transport.AbstractClient.<init>(AbstractClient.java:105)
+ [DUBBO] Start NettyClient pc16/192.168.5.8 connect to the server /192.168.5.8:20882, dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[WARN ] 2017-08-23 11:16:19,048 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108)
+Client session timed out, have not heard from server in 30719ms for sessionid 0x15e0ca4be8b0014
+
+
+[INFO ] 2017-08-23 11:16:22,660 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1156)
+Client session timed out, have not heard from server in 30719ms for sessionid 0x15e0ca4be8b0014, closing socket connection and attempting reconnect
+
+
+[INFO ] 2017-08-23 11:16:22,941 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (Disconnected)
+
+
+[INFO ] 2017-08-23 11:16:25,015 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-23 11:16:25,027 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[INFO ] 2017-08-23 11:16:25,120 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (Expired)
+
+
+[INFO ] 2017-08-23 11:16:25,120 method:org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)
+Initiating client connection, connectString=192.168.181.152:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@e3ddd06
+
+
+[WARN ] 2017-08-23 11:16:25,152 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1285)
+Unable to reconnect to ZooKeeper service, session 0x15e0ca4be8b0014 has expired
+
+
+[INFO ] 2017-08-23 11:16:25,327 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1154)
+Unable to reconnect to ZooKeeper service, session 0x15e0ca4be8b0014 has expired, closing socket connection
+
+
+[INFO ] 2017-08-23 11:16:30,062 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-23 11:16:30,098 method:org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:519)
+EventThread shut down for session: 0x15e0ca4be8b0014
+
+
+[INFO ] 2017-08-23 11:16:31,979 method:com.alibaba.dubbo.registry.support.FailbackRegistry.recover(FailbackRegistry.java:282)
+ [DUBBO] Recover register url [consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=consumers&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 11:16:32,091 method:com.alibaba.dubbo.registry.support.FailbackRegistry.recover(FailbackRegistry.java:292)
+ [DUBBO] Recover subscribe url [consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 11:16:32,060 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[INFO ] 2017-08-23 11:16:34,966 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1299)
+Session establishment complete on server 192.168.181.152/192.168.181.152:2181, sessionid = 0x15e0ca4be8b001f, negotiated timeout = 30000
+
+
+[INFO ] 2017-08-23 11:16:34,967 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (SyncConnected)
+
+
+[INFO ] 2017-08-23 11:16:36,151 method:com.alibaba.dubbo.registry.support.FailbackRegistry.retry(FailbackRegistry.java:309)
+ [DUBBO] Retry register [consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=consumers&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 11:16:36,361 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [dubbo://192.168.5.8:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6020&side=provider&timeout=300000&timestamp=1503453029840], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 11:16:36,380 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 11:16:36,588 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 11:16:36,976 method:com.alibaba.dubbo.registry.support.FailbackRegistry.retry(FailbackRegistry.java:354)
+ [DUBBO] Retry subscribe {consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789=[com.alibaba.dubbo.registry.integration.RegistryDirectory@605e3669]}, dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 11:16:42,444 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [dubbo://192.168.5.8:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6020&side=provider&timeout=300000&timestamp=1503453029840, empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[WARN ] 2017-08-23 11:58:50,858 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108)
+Client session timed out, have not heard from server in 32474ms for sessionid 0x15e0ca4be8b001f
+
+
+[INFO ] 2017-08-23 11:59:44,044 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1156)
+Client session timed out, have not heard from server in 32474ms for sessionid 0x15e0ca4be8b001f, closing socket connection and attempting reconnect
+
+
+[INFO ] 2017-08-23 11:59:47,826 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (Disconnected)
+
+
+[INFO ] 2017-08-23 12:00:19,895 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-23 12:00:23,853 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[INFO ] 2017-08-23 12:00:25,220 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (Expired)
+
+
+[WARN ] 2017-08-23 12:00:25,229 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1285)
+Unable to reconnect to ZooKeeper service, session 0x15e0ca4be8b001f has expired
+
+
+[INFO ] 2017-08-23 12:00:25,936 method:org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)
+Initiating client connection, connectString=192.168.181.152:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@e3ddd06
+
+
+[INFO ] 2017-08-23 12:00:26,041 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1154)
+Unable to reconnect to ZooKeeper service, session 0x15e0ca4be8b001f has expired, closing socket connection
+
+
+[INFO ] 2017-08-23 12:00:59,632 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-23 12:00:59,634 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[INFO ] 2017-08-23 12:00:59,778 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1299)
+Session establishment complete on server 192.168.181.152/192.168.181.152:2181, sessionid = 0x15e0ca4be8b0034, negotiated timeout = 30000
+
+
+[INFO ] 2017-08-23 12:00:59,859 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (SyncConnected)
+
+
+[INFO ] 2017-08-23 12:00:59,958 method:org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:519)
+EventThread shut down for session: 0x15e0ca4be8b001f
+
+
+[INFO ] 2017-08-23 12:01:11,726 method:com.alibaba.dubbo.registry.support.FailbackRegistry.recover(FailbackRegistry.java:282)
+ [DUBBO] Recover register url [consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=consumers&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 12:01:12,442 method:com.alibaba.dubbo.registry.support.FailbackRegistry.recover(FailbackRegistry.java:292)
+ [DUBBO] Recover subscribe url [consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[WARN ] 2017-08-23 12:01:36,949 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108)
+Client session timed out, have not heard from server in 37172ms for sessionid 0x15e0ca4be8b0034
+
+
+[INFO ] 2017-08-23 12:01:37,517 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1156)
+Client session timed out, have not heard from server in 37172ms for sessionid 0x15e0ca4be8b0034, closing socket connection and attempting reconnect
+
+
+[INFO ] 2017-08-23 12:01:37,897 method:com.alibaba.dubbo.registry.support.FailbackRegistry.retry(FailbackRegistry.java:309)
+ [DUBBO] Retry register [consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=consumers&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 12:02:20,058 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-23 12:02:06,273 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (Disconnected)
+
+
+[INFO ] 2017-08-23 12:02:20,545 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[WARN ] 2017-08-23 12:02:20,572 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1285)
+Unable to reconnect to ZooKeeper service, session 0x15e0ca4be8b0034 has expired
+
+
+[INFO ] 2017-08-23 12:02:20,572 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1154)
+Unable to reconnect to ZooKeeper service, session 0x15e0ca4be8b0034 has expired, closing socket connection
+
+
+[INFO ] 2017-08-23 12:02:20,572 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (Expired)
+
+
+[INFO ] 2017-08-23 12:02:21,059 method:org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)
+Initiating client connection, connectString=192.168.181.152:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@e3ddd06
+
+
+[INFO ] 2017-08-23 12:02:21,201 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-23 12:02:21,229 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[INFO ] 2017-08-23 12:02:21,234 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1299)
+Session establishment complete on server 192.168.181.152/192.168.181.152:2181, sessionid = 0x15e0ca4be8b003a, negotiated timeout = 30000
+
+
+[INFO ] 2017-08-23 12:02:31,653 method:org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:519)
+EventThread shut down for session: 0x15e0ca4be8b0034
+
+
+[INFO ] 2017-08-23 12:02:31,653 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (SyncConnected)
+
+
+[WARN ] 2017-08-23 12:02:55,679 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108)
+Client session timed out, have not heard from server in 24026ms for sessionid 0x15e0ca4be8b003a
+
+
+[INFO ] 2017-08-23 12:02:55,680 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1156)
+Client session timed out, have not heard from server in 24026ms for sessionid 0x15e0ca4be8b003a, closing socket connection and attempting reconnect
+
+
+[INFO ] 2017-08-23 12:02:55,780 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (Disconnected)
+
+
+[INFO ] 2017-08-23 12:02:56,999 method:org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1032)
+Opening socket connection to server 192.168.181.152/192.168.181.152:2181. Will not attempt to authenticate using SASL (unknown error)
+
+
+[INFO ] 2017-08-23 12:02:57,013 method:org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:876)
+Socket connection established to 192.168.181.152/192.168.181.152:2181, initiating session
+
+
+[INFO ] 2017-08-23 12:02:57,016 method:org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1299)
+Session establishment complete on server 192.168.181.152/192.168.181.152:2181, sessionid = 0x15e0ca4be8b003a, negotiated timeout = 30000
+
+
+[INFO ] 2017-08-23 12:02:57,016 method:org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:449)
+zookeeper state changed (SyncConnected)
+
+
+[INFO ] 2017-08-23 12:02:58,957 method:com.alibaba.dubbo.registry.support.FailbackRegistry.retry(FailbackRegistry.java:354)
+ [DUBBO] Retry subscribe {consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789=[com.alibaba.dubbo.registry.integration.RegistryDirectory@605e3669]}, dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 12:03:12,800 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [dubbo://192.168.5.8:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6020&side=provider&timeout=300000&timestamp=1503453029840], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 12:03:12,823 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [dubbo://192.168.5.8:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6020&side=provider&timeout=300000&timestamp=1503453029840, empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 12:03:24,225 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 12:03:37,046 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 12:03:37,248 method:com.alibaba.dubbo.registry.support.FailbackRegistry.recover(FailbackRegistry.java:282)
+ [DUBBO] Recover register url [consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=consumers&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 12:03:37,249 method:com.alibaba.dubbo.registry.support.FailbackRegistry.recover(FailbackRegistry.java:292)
+ [DUBBO] Recover subscribe url [consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 12:03:37,271 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [dubbo://192.168.5.8:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6020&side=provider&timeout=300000&timestamp=1503453029840], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 12:03:37,303 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 12:03:37,321 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 12:03:41,839 method:com.alibaba.dubbo.registry.support.FailbackRegistry.retry(FailbackRegistry.java:309)
+ [DUBBO] Retry register [consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=consumers&check=false&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 12:03:47,540 method:com.alibaba.dubbo.registry.support.FailbackRegistry.retry(FailbackRegistry.java:354)
+ [DUBBO] Retry subscribe {consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789=[com.alibaba.dubbo.registry.integration.RegistryDirectory@605e3669]}, dubbo version: 2.5.3, current host: 192.168.5.8
+
+
+[INFO ] 2017-08-23 12:03:49,606 method:com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)
+ [DUBBO] Notify urls for subscribe url consumer://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=providers,configurators,routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, urls: [dubbo://192.168.5.8:20882/cn.brotherchun.bcshop.search.service.SearchService?anyhost=true&application=bcshop-search&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6020&side=provider&timeout=300000&timestamp=1503453029840, empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=configurators&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789, empty://192.168.5.8/cn.brotherchun.bcshop.search.service.SearchService?application=bcshop-search-web&category=routers&dubbo=2.5.3&interface=cn.brotherchun.bcshop.search.service.SearchService&methods=search&pid=6240&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1503453166789], dubbo version: 2.5.3, current host: 192.168.5.8

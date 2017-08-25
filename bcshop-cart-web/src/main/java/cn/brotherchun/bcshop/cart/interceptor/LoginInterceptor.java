@@ -31,7 +31,7 @@ public class LoginInterceptor implements HandlerInterceptor{
 		// 前处理，执行handler之前执行此方法。
 		//返回true，放行	false：拦截
 		//1.从cookie中取token
-		String token = CookieUtils.getCookieValue(request, "bcshop-token").toString();
+		String token = CookieUtils.getCookieValue(request, "bcshop-token");
 		//2.如果没有token，未登录状态，直接放行
 		if(!StringUtils.isNoneBlank(token))
 			return true;

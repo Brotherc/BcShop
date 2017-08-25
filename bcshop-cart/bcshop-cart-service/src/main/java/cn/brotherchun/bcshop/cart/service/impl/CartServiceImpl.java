@@ -3,7 +3,6 @@ package cn.brotherchun.bcshop.cart.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,11 +63,10 @@ public class CartServiceImpl implements CartService{
 	}
 	@Override
 	public List<TbItem> getCartTbItemList(Long userId) throws Exception {
-		String json = jedisClient.get(CartUSER_KEY + ":" + userId);
-		Map<Long, TbItem> map = JsonUtils.jsonToMap(json, Long.class, TbItem.class);
+		List<String> list = jedisClient.hvals(CartUSER_KEY + ":" + userId);
 		List<TbItem>cartList=new ArrayList<>();
-		for(TbItem tbItem:map.values()){
-			cartList.add(tbItem);
+		for(String json:list){
+			cartList.add(JsonUtils.jsonToPojo(json, TbItem.class));
 		}
 		return cartList;
 	}
@@ -86,13 +84,13 @@ public class CartServiceImpl implements CartService{
 	@Override
 	public BcResult deleteCartTbItem(long userId, long itemId) {
 		// 删除购物车商品
-		jedisClient.hdel(CartUSER_KEY + ":" + userId, itemId + "");
+		jedisClient.hdel(CartUSER_KEY + ":" + userId, itemId + ""); 
 		return BcResult.ok();
 	}
 	@Override
 	public BcResult clearCartTbItem(long userId) {
 		//删除购物车信息
-		jedisClient.set(CartUSER_KEY + ":" + userId, "");
+		jedisClient.del(CartUSER_KEY + ":" + userId); 
 		return BcResult.ok();
 	}
 }

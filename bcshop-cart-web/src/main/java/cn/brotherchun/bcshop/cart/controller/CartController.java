@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.brotherchun.bcshop.cart.service.impl.CartService;
-import cn.brotherchun.bcshop.common.jedis.JedisClient;
 import cn.brotherchun.bcshop.common.utils.BcResult;
 import cn.brotherchun.bcshop.common.utils.CookieUtils;
 import cn.brotherchun.bcshop.common.utils.JsonUtils;
@@ -43,9 +42,7 @@ public class CartController {
 	private TbItemService tbItemService;
 	@Autowired
 	private CartService cartService;
-	@Autowired
-	private JedisClient jedisClient;
-	
+
 	//添加商品到购物车
 	@RequestMapping("/cart/add/{tbItemId}")
 	public String addTbItemCart(HttpServletRequest request,HttpServletResponse response,@PathVariable Long tbItemId,@RequestParam(defaultValue="1")Integer num) throws Exception{
@@ -116,7 +113,7 @@ public class CartController {
 	
 	//清除购物车中某一商品
 	@RequestMapping("/cart/delete/{tbItemId}")
-	public @ResponseBody String deleteCartTbItem(HttpServletRequest request,HttpServletResponse response,@PathVariable Long tbItemId) throws Exception{
+	public String deleteCartTbItem(HttpServletRequest request,HttpServletResponse response,@PathVariable Long tbItemId) throws Exception{
 		//判断用户是否为登录状态
 		TbUser user = (TbUser) request.getAttribute("user");
 		if (user != null) {

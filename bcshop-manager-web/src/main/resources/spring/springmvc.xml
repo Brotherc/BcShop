@@ -14,7 +14,7 @@
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
-	<context:component-scan base-package="cn.brotherchun.bcshop.controller" />
+	<context:component-scan base-package="cn.brotherchun.bcshop.manager.*" />
 	<!-- 加载配置文件 -->
 	<context:property-placeholder location="classpath:conf/resource.properties" />
 	<mvc:annotation-driven /> 
@@ -35,6 +35,15 @@
 		<property name="maxUploadSize" value="5242880"></property>
 	</bean>
 	
+	<!--json转换器  -->
+	<bean id="jsonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+	</bean>
+	
+	<!--统一异常处理类  -->
+	<bean class="cn.brotherchun.bcshop.manager.exception.GlobalExceptionResolver">
+		<property name="jsonMessageConverter" ref="jsonMessageConverter"></property>
+	</bean>
+	
 	<!-- 引用dubbo服务 -->
 	<dubbo:application name="bcshop-manager-web"/>
 	<dubbo:registry protocol="zookeeper" address="192.168.181.152:2181"/>	
@@ -44,4 +53,5 @@
 	<dubbo:reference interface="cn.brotherchun.bcshop.service.TbItemParamService" id="tbItemParamService" />
 	<dubbo:reference interface="cn.brotherchun.bcshop.content.service.TbContentService" id="tbContentService" />
 	<dubbo:reference interface="cn.brotherchun.bcshop.search.service.SearchItemService" id="searchItemService" />
+	<dubbo:reference interface="cn.brotherchun.bcshop.service.CrawlItemService" id="crawlItemService" />
 </beans>

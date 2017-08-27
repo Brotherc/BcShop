@@ -31,4 +31,5 @@
 	<dubbo:service interface="cn.brotherchun.bcshop.service.TbItemService" ref="tbItemServiceImpl" timeout="300000"/>
 	<dubbo:service interface="cn.brotherchun.bcshop.service.TbItemCatService" ref="tbItemCatServiceImpl" timeout="300000"/>
 	<dubbo:service interface="cn.brotherchun.bcshop.service.TbItemParamService" ref="tbItemParamServiceImpl" timeout="300000"/>
+	<dubbo:service interface="cn.brotherchun.bcshop.service.CrawlItemService" ref="crawlItemServiceImpl" timeout="300000"/>
 </beans>

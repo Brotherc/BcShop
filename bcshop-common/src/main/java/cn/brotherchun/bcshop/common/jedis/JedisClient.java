@@ -16,4 +16,8 @@ public interface JedisClient {
 	Boolean hexists(String key, String field);
 	List<String> hvals(String key);
 	Long del(String key);
+	Long llset(String key,String value);
+	Long ldel(String key,String value);
+	List<String>lget(String key,int start,int end);
+	Long llen(String key);
 }

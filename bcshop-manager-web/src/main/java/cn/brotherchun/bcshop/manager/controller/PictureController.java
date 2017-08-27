@@ -1,4 +1,4 @@
-package cn.brotherchun.bcshop.controller;
+package cn.brotherchun.bcshop.manager.controller;
 
 import java.util.HashMap;
 import java.util.Map;

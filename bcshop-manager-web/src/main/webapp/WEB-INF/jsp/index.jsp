@@ -47,6 +47,12 @@
 	         		<li data-options="attributes:{'url':'index-item'}">solr索引库维护</li>
 	         	</ul>
          	</li>
+         	<li>
+         		<span>爬虫管理</span>
+         		<ul>
+	         		<li data-options="attributes:{'url':'crawlitem-list'}">爬取商品</li>
+	         	</ul>
+         	</li>
          </ul>
     </div>
     <div data-options="region:'center',title:''">

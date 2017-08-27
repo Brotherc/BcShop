@@ -77,4 +77,24 @@ public class JedisClientCluster implements JedisClient {
 		return jedisCluster.del(key);
 	}
 
+	@Override
+	public Long llset(String key,String value) {
+		return jedisCluster.lpush(key, value);
+	}
+
+	@Override
+	public Long ldel(String key,String value) {
+		return jedisCluster.lrem(key, 0, value);
+	}
+
+	@Override
+	public List<String> lget(String key, int start, int end) {
+		return jedisCluster.lrange(key, start, end);
+	}
+
+	@Override
+	public Long llen(String key) {
+		return jedisCluster.llen(key);
+	}
+
 }

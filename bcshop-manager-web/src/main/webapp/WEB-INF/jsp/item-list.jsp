@@ -26,6 +26,7 @@
     	var sels = itemList.datagrid("getSelections");
     	var ids = [];
     	for(var i in sels){
+    		alert(sels[i].id)
     		ids.push(sels[i].id);
     	}
     	ids = ids.join(",");

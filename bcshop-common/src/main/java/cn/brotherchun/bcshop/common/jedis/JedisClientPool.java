@@ -113,4 +113,36 @@ public class JedisClientPool implements JedisClient {
 		return result;
 	}
 
+	@Override
+	public Long llset(String key, String value) {
+		Jedis jedis = jedisPool.getResource();
+		Long result = jedis.lpush(key, value);
+		jedis.close();
+		return result;
+	}
+
+	@Override
+	public Long ldel(String key, String value) {
+		Jedis jedis = jedisPool.getResource();
+		Long result = jedis.lrem(key, 0, value);
+		jedis.close();
+		return result;
+	}
+
+	@Override
+	public List<String> lget(String key, int start, int end) {
+		Jedis jedis = jedisPool.getResource();
+		List<String> result = jedis.lrange(key, start, end);
+		jedis.close();
+		return result;
+	}
+
+	@Override
+	public Long llen(String key) {
+		Jedis jedis = jedisPool.getResource();
+		Long result = jedis.llen(key);
+		jedis.close();
+		return result;
+	}
+
 }

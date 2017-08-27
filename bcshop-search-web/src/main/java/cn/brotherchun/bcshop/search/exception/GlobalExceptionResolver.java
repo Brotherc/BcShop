@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
  * 全局异常处理器
  * <p>Title: GlobalExceptionResolver</p>
  * <p>Description: </p>
- * <p>Company: www.itcast.cn</p> 
+ * <p>Company: www.brotherchun.cn</p> 
  * @version 1.0
  */
 public class GlobalExceptionResolver implements HandlerExceptionResolver {

@@ -38,12 +38,22 @@ public class Spider {
 	       Element title = titles.get(0);
 	       System.out.println(title.text());
 	       
+	       //获取商品大图
 	       Element element = doc.getElementById("spec-img");
-	       String attr = element.attr("data-origin");
-	       String img = attr.replaceAll("//", "http://");
+	       String img = element.attr("data-origin");
+	       StringBuilder imageList=new StringBuilder();
+	       imageList.append(img);
+	       
+	       //获取商品图片列表
+	       Elements imags = doc.select("#spec-list img");
+	       for(Element imag:imags){
+	    	   String imagSrc = imag.attr("src");
+	    	   imageList.append(",");
+	    	   imageList.append(imagSrc);
+	       }
 	       
 	       TbItem tbItem=new TbItem();
-	       tbItem.setImage(img);
+	       tbItem.setImage(imageList.toString());
 	       tbItem.setTitle(title.text());
 	       return tbItem;
 	};

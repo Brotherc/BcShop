@@ -158,8 +158,4 @@ public class CrawlItemServiceImpl implements CrawlItemService{
 		String id=url.substring(url.lastIndexOf("/")+1,url.lastIndexOf("."));
 		return id;
 	}
-/*	public static void main(String[] args) throws Exception{
-		CrawlItemServiceImpl itemServiceImpl=new CrawlItemServiceImpl();
-		itemServiceImpl.crawlItemList("https://list.jd.com/list.html?cat=12259,12260,9438");
-	}*/
 }

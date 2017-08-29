@@ -18,18 +18,11 @@
 			var url = "/crawltbitem/crawl";
 			var crawlurl=$("#url").val();
 			$.post(url,{"url":crawlurl},function(data){
-				if(data.status == 200){
-					$.messager.alert('提示','爬取商品成功!',undefined,function(){
-						$(".panel-tool-close").click();
-						$("#crawlItemList").datagrid("reload");
-					});
-				}else{
-					var message=data.msg;
-					$.messager.alert('提示',message,undefined,function(){
-						$(".panel-tool-close").click();
-						$("#crawlItemList").datagrid("reload");
-					});
-				}
+				var message=data.msg;
+				$.messager.alert('提示',message,undefined,function(){
+					$(".panel-tool-close").click();
+					$("#crawlItemList").datagrid("reload");
+				});
 			});
 		};
 </script>

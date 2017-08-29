@@ -1,6 +1,7 @@
 package cn.brotherchun.bcshop.service;
 
 import cn.brotherchun.bcshop.common.pojo.EasyUIDataGridResult;
+import cn.brotherchun.bcshop.common.utils.BcResult;
 
 public interface CrawlItemService {
 	/**
@@ -8,7 +9,7 @@ public interface CrawlItemService {
 	 * @param url 请求url
 	 * @throws Exception
 	 */
-	public void crawlItems(String url) throws Exception;
+	public BcResult crawlItems(String url) throws Exception;
 	
 	/**
 	 * 从redis中取出爬取商品的信息

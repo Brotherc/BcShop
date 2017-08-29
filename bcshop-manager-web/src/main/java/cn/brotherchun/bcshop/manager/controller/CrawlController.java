@@ -24,6 +24,10 @@ public class CrawlController {
 	
 	@RequestMapping("/crawltbitem/crawl")
 	public @ResponseBody BcResult crawlTbItems(String url) throws Exception{
+		return crawlItemService.crawlItems(url);
+	}
+	@RequestMapping("/crawltbitem/crawlList")
+	public @ResponseBody BcResult crawlTbItemList(String url) throws Exception{
 		crawlItemService.crawlItems(url);
 		return BcResult.ok();
 	}

@@ -31,11 +31,12 @@ public class Spider {
 	 * @throws Exception
 	 */
 	public TbItem crawlItemBase(String url) throws Exception{
+		System.out.println(url);
 			String content = HttpUtils.getHtml(httpClient, url);
 	       Document doc=Jsoup.parse(content);
-	       
 	       Elements titles=doc.select(".sku-name");
 	       Element title = titles.get(0);
+	       System.out.println(title.text());
 	       
 	       Element element = doc.getElementById("spec-img");
 	       String attr = element.attr("data-origin");
@@ -114,5 +115,5 @@ public class Spider {
 			cat=cat.replace(",", "%2C");
 			return cat;
 	};
-	
+
 }

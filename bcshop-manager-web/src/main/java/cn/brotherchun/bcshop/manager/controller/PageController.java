@@ -10,7 +10,7 @@ public class PageController {
 	//跳转首页
 	@RequestMapping("/")
 	public String showIndex() throws Exception{
-		return "index";
+		return "login";
 	}
 	
 	//跳转页面

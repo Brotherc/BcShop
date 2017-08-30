@@ -54,4 +54,5 @@
 	<dubbo:reference interface="cn.brotherchun.bcshop.content.service.TbContentService" id="tbContentService" />
 	<dubbo:reference interface="cn.brotherchun.bcshop.search.service.SearchItemService" id="searchItemService" />
 	<dubbo:reference interface="cn.brotherchun.bcshop.service.CrawlItemService" id="crawlItemService" />
+	<dubbo:reference interface="cn.brotherchun.bcshop.service.ManagerService" id="managerService" />
 </beans>

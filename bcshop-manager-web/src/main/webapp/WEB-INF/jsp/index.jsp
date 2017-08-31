@@ -27,7 +27,15 @@
 	    	登录用户：${user.username}&nbsp;&nbsp;
 	    	角色：
 	    	<c:if test="${user.type==0 }">系统管理员</c:if>
+	    <a href="javascript:void(0);" class="easyui-menubutton" data-options="menu:'#layout_north_kzmbMenu',iconCls:'icon-help'">控制面板</a>
 	    </span>
+	</div>
+	<div id="layout_north_kzmbMenu" style="width: 100px; display: none;">
+		<div onclick="changePwd();">修改密码</div>
+		<div class="menu-sep"></div>
+		<div onclick="showAbout();">联系管理员</div>
+		<div class="menu-sep"></div>
+		<div onclick="logout();">退出系统</div>
 	</div>
     <div data-options="region:'west',title:'菜单',split:true" style="width:180px;">
     	<ul id="menu" class="easyui-tree" style="margin-top: 10px;margin-left: 5px;">
@@ -72,7 +80,92 @@
 		<span id="sysVersion">系统版本：V1.0</span>
 	    <span id="nowTime"></span>
 	</div>
+	
+	<!--修改密码窗口-->
+    <div id="changePwdWindow" class="easyui-window" title="修改密码" collapsible="false" minimizable="false" modal="true" closed="true" resizable="false"
+        maximizable="false" icon="icon-save"  style="width: 300px; height: 200px; padding: 5px;
+        background: #fafafa">
+        <div class="easyui-layout" fit="true">
+            <div region="center" border="false" style="padding: 10px; background: #fff; border: 1px solid #ccc;">
+               <form id="changePwdForm">
+	                <table cellpadding=3>
+	                	<tr>
+	                        <td>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</td>
+	                        <td><input  required="true" data-options="validType:'length[4,6]'" id="txtOldPass" type="Password" class="txt01 easyui-validatebox" /></td>
+	                    </tr>
+	                    <tr>
+	                        <td>新&nbsp;&nbsp;密&nbsp;&nbsp;码：</td>
+	                        <td><input  required="true" data-options="validType:'length[4,6]'" id="txtNewPass" type="Password" class="txt01 easyui-validatebox" /></td>
+	                    </tr>
+	                    <tr>
+	                        <td>确认密码：</td>
+	                        <td><input required="true" data-options="validType:'length[4,6]'" id="txtRePass" type="Password" class="txt01 easyui-validatebox" /></td>
+	                    </tr>
+	                </table>
+               </form>
+            </div>
+            <div region="south" border="false" style="text-align: right; height: 30px; line-height: 30px;">
+                <a id="btnEp" class="easyui-linkbutton" icon="icon-ok" href="javascript:void(0)" >确定</a> 
+                <a id="btnCancel" class="easyui-linkbutton" icon="icon-cancel" href="javascript:void(0)">取消</a>
+            </div>
+        </div>
+    </div>
 <script type="text/javascript">
+
+$("#btnCancel").click(function(){
+	$('#changePwdWindow').window('close');
+});
+
+//为确定按钮绑定事件
+$("#btnEp").click(function(){
+	//进行表单校验
+	var v = $("#changePwdForm").form("validate");
+	if(v){
+		var oldPwd = $("#txtOldPass").val();
+		//表单校验通过，手动校验两次输入是否一致
+		var newPwd = $("#txtNewPass").val();
+		var newPwdTwo = $("#txtRePass").val();
+		if(newPwd == newPwdTwo){
+			//两次输入一致，发送ajax请求
+			$.post("/manager/changePwd",{"oldPwd":oldPwd,"newPwd":newPwd,"newPwdTwo":newPwdTwo},function(data){
+				if(data.status == 200){
+					//修改成功，关闭修改密码窗口
+					$.messager.alert("提示信息",data.msg,"success");
+					$("#changePwdWindow").window("close");
+					//重新登录
+					location.href = '/manager/logout';
+				}else{
+					//修改密码失败，弹出提示
+					$.messager.alert("提示信息",data.msg,"error");
+				}
+			});
+		}else{
+			//两次输入不一致，弹出错误提示
+			$.messager.alert("提示信息","两次新密码输入不一致！","warning");
+		}
+	}
+});
+
+// 退出登录
+function logout() {
+	$.messager
+	.confirm('系统提示','您确定要退出本次登录吗?',function(isConfirm) {
+		if (isConfirm) {
+			location.href = '/manager/logout';
+		}
+	});
+}
+
+// 修改密码
+function changePwd() {
+	//打开修改密码窗口
+	$('#changePwdWindow').window('open');
+}
+// 版权信息
+function showAbout(){
+	$.messager.alert("BCv1.0","管理员邮箱: lcs@BrotherChun.cn");
+}
+
 $(function(){
 	$('#menu').tree({
 		onClick: function(node){

@@ -13,4 +13,15 @@ public interface ManagerService {
 	 * @throws Exception
 	 */
 	public BcResult login(String validatecodePage,String validatecodeSession,String username,String pwd) throws Exception;
+	
+	/**
+	 * 用户修改密码
+	 * @param id 用户id
+	 * @param newPwd 新密码
+	 * @param oldPwd 旧密码
+	 * @param newPwdTwo 第二次输入新密码
+	 * @return
+	 * @throws Exception
+	 */
+	public BcResult changePwd(Long id,String newPwd,String oldPwd,String newPwdTwo) throws Exception;
 }

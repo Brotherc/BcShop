@@ -26,4 +26,15 @@ public class ManagerUserController {
 		session.setAttribute("user", user);
 		return bcResult;
 	}
+	@RequestMapping("/manager/logout")
+	public String logout(HttpSession session) throws Exception{
+		session.invalidate();
+		return "redirect:/";
+	}
+	
+	@RequestMapping("/manager/changePwd")
+	public @ResponseBody BcResult changePwd(HttpSession session,String oldPwd,String newPwd,String newPwdTwo) throws Exception{
+		TbManageruser user=(TbManageruser) session.getAttribute("user");
+		return managerService.changePwd(user.getId(), newPwd, oldPwd, newPwdTwo);
+	}
 }

@@ -40,6 +40,13 @@
     <div data-options="region:'west',title:'菜单',split:true" style="width:180px;">
     	<ul id="menu" class="easyui-tree" style="margin-top: 10px;margin-left: 5px;">
          	<li>
+         		<span>用户管理</span>
+         		<ul>
+	         		<li data-options="attributes:{'url':'user'}">用户信息管理</li>
+	         		<li data-options="attributes:{'url':'role'}">用户角色管理</li>
+	         	</ul>
+         	</li>
+         	<li>
          		<span>商品管理</span>
          		<ul>
 	         		<li data-options="attributes:{'url':'item-add'}">新增商品</li>
@@ -91,15 +98,15 @@
 	                <table cellpadding=3>
 	                	<tr>
 	                        <td>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</td>
-	                        <td><input  required="true" data-options="validType:'length[4,6]'" id="txtOldPass" type="Password" class="txt01 easyui-validatebox" /></td>
+	                        <td><input  required="true" data-options="validType:'length[4,6]'" id="txtOldPass" type="Password" class="easyui-textbox" /></td>
 	                    </tr>
 	                    <tr>
 	                        <td>新&nbsp;&nbsp;密&nbsp;&nbsp;码：</td>
-	                        <td><input  required="true" data-options="validType:'length[4,6]'" id="txtNewPass" type="Password" class="txt01 easyui-validatebox" /></td>
+	                        <td><input  required="true" data-options="validType:'length[4,6]'" id="txtNewPass" type="Password" class="easyui-textbox" /></td>
 	                    </tr>
 	                    <tr>
 	                        <td>确认密码：</td>
-	                        <td><input required="true" data-options="validType:'length[4,6]'" id="txtRePass" type="Password" class="txt01 easyui-validatebox" /></td>
+	                        <td><input required="true" data-options="validType:'length[4,6]'" id="txtRePass" type="Password" class="easyui-textbox" /></td>
 	                    </tr>
 	                </table>
                </form>

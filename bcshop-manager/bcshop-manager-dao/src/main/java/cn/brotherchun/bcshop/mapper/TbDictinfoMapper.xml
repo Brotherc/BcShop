@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.brotherchun.bcshop.mapper.TbDictinfoMapper" >
+  <resultMap id="BaseResultMap" type="cn.brotherchun.bcshop.pojo.TbDictinfo" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="dictcode" property="dictcode" jdbcType="VARCHAR" />
+    <result column="typecode" property="typecode" jdbcType="VARCHAR" />
+    <result column="info" property="info" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, dictcode, typecode, info
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.brotherchun.bcshop.pojo.TbDictinfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_dictinfo
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_dictinfo
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tb_dictinfo
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.brotherchun.bcshop.pojo.TbDictinfoExample" >
+    delete from tb_dictinfo
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.brotherchun.bcshop.pojo.TbDictinfo" >
+    insert into tb_dictinfo (id, dictcode, typecode, 
+      info)
+    values (#{id,jdbcType=VARCHAR}, #{dictcode,jdbcType=VARCHAR}, #{typecode,jdbcType=VARCHAR}, 
+      #{info,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.brotherchun.bcshop.pojo.TbDictinfo" >
+    insert into tb_dictinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="dictcode != null" >
+        dictcode,
+      </if>
+      <if test="typecode != null" >
+        typecode,
+      </if>
+      <if test="info != null" >
+        info,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="dictcode != null" >
+        #{dictcode,jdbcType=VARCHAR},
+      </if>
+      <if test="typecode != null" >
+        #{typecode,jdbcType=VARCHAR},
+      </if>
+      <if test="info != null" >
+        #{info,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.brotherchun.bcshop.pojo.TbDictinfoExample" resultType="java.lang.Integer" >
+    select count(*) from tb_dictinfo
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_dictinfo
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dictcode != null" >
+        dictcode = #{record.dictcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.typecode != null" >
+        typecode = #{record.typecode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.info != null" >
+        info = #{record.info,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_dictinfo
+    set id = #{record.id,jdbcType=VARCHAR},
+      dictcode = #{record.dictcode,jdbcType=VARCHAR},
+      typecode = #{record.typecode,jdbcType=VARCHAR},
+      info = #{record.info,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.brotherchun.bcshop.pojo.TbDictinfo" >
+    update tb_dictinfo
+    <set >
+      <if test="dictcode != null" >
+        dictcode = #{dictcode,jdbcType=VARCHAR},
+      </if>
+      <if test="typecode != null" >
+        typecode = #{typecode,jdbcType=VARCHAR},
+      </if>
+      <if test="info != null" >
+        info = #{info,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.brotherchun.bcshop.pojo.TbDictinfo" >
+    update tb_dictinfo
+    set dictcode = #{dictcode,jdbcType=VARCHAR},
+      typecode = #{typecode,jdbcType=VARCHAR},
+      info = #{info,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

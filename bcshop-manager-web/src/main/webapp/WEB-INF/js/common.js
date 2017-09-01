@@ -55,6 +55,24 @@ var E3 = {
         	return '未知';
         }
     },
+	// 格式化用户的状态
+    formatManagerUserStatus : function formatManagerUserStatus(val,row){
+        if (val == 1){
+            return '启用';
+        } else if(val == 2){
+        	return '<span style="color:red;">停用</span>';
+        } else {
+        	return '未知';
+        }
+    },
+	// 格式化用户的类型
+    formatManagerUserType : function formatManagerUserType(val,row){
+        if (val == 0){
+            return '管理员';
+        } else {
+        	return '未知';
+        }
+    },
     
     init : function(data){
     	// 初始化图片上传组件

@@ -68,6 +68,11 @@
 			<artifactId>servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<!-- 汉字拼音组件 -->
+		<dependency>
+			<groupId>net.sourceforge</groupId>
+			<artifactId>pinyin4j</artifactId>
+		</dependency>
 	</dependencies>
 
 </project>

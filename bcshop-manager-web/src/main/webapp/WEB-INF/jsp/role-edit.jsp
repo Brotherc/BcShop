@@ -9,7 +9,7 @@
 	        </tr>
 	        <tr>
 	            <td>角色描述:</td>
-	            <td><input class="easyui-textbox" type="text" name="roledesc" data-options="required:true,multiline:true" style="width: 280px;heigth:100px;"></input></td>
+	            <td><input class="easyui-textbox" name="roledesc" data-options="required:true,multiline:true,validType:'length[0,150]'" style="height:60px;width: 280px;"></input></td>
 	        </tr>
 	        <tr>
 	            <td>简码:</td>

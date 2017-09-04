@@ -19,6 +19,8 @@
 </table>
 <div id="itemEditWindow" class="easyui-window" title="编辑商品" data-options="modal:true,closed:true,iconCls:'icon-save',href:'/item-edit'" style="width:80%;height:80%;padding:10px;">
 </div>
+<div id="itemImportWindow" class="easyui-window" title="导入商品" data-options="modal:true,closed:true,iconCls:'icon-save',href:'/item-import'" style="width:60%;height:50%;padding:10px;">
+</div>
 <script>
 
     function getSelectionsIds(){
@@ -38,7 +40,13 @@
         handler:function(){
         	$(".tree-title:contains('新增商品')").parent().click();
         }
-    },{
+    }, {
+		text : '导入',
+		iconCls : 'icon-redo',
+        handler:function(){
+        	$("#itemImportWindow").window("open");
+        }
+	},{
         text:'编辑',
         iconCls:'icon-edit',
         handler:function(){

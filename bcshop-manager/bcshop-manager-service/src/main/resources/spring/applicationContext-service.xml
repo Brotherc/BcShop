@@ -36,4 +36,6 @@
 	<dubbo:service interface="cn.brotherchun.bcshop.service.ManagerService" ref="managerServiceImpl" timeout="300000"/>
 	<dubbo:service interface="cn.brotherchun.bcshop.service.RoleService" ref="roleServiceImpl" timeout="300000"/>
 	<dubbo:service interface="cn.brotherchun.bcshop.service.DictInfoService" ref="dictInfoServiceImpl" timeout="300000"/>
+	<dubbo:service interface="cn.brotherchun.bcshop.service.TbItemImportService" ref="tbItemImportServiceImpl" timeout="300000"/>
+	
 </beans>

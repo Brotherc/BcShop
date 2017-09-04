@@ -1,15 +1,21 @@
 package cn.brotherchun.bcshop.manager.controller;
 
+import java.io.File;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import cn.brotherchun.bcshop.common.pojo.EasyUIDataGridResult;
 import cn.brotherchun.bcshop.common.utils.BcResult;
+import cn.brotherchun.bcshop.common.utils.UUIDBuild;
 import cn.brotherchun.bcshop.pojo.TbItem;
+import cn.brotherchun.bcshop.service.TbItemImportService;
 import cn.brotherchun.bcshop.service.TbItemService;
 
 @Controller
@@ -17,6 +23,11 @@ public class TbItemController {
 
 	@Autowired
 	private TbItemService tbItemService;
+	@Autowired
+	private TbItemImportService tbItemImportService;
+	
+	@Value("${IMPORT_ITEM_EXCEL_PRE}")
+	private String IMPORT_ITEM_EXCEL_PRE;
 	
 	//测试通过id获取商品
 	@RequestMapping("/tbitem/{id}")
@@ -89,4 +100,30 @@ public class TbItemController {
 		}
 		return new BcResult().ok();
 	}
+	
+	//药品导入提交
+	@RequestMapping("/tbitem/import")
+	public @ResponseBody BcResult importTbItem(
+			//写上传的文件
+			MultipartFile tbItemImportFile
+			)throws Exception{
+		
+		//将上传的文件写到磁盘
+		String originalFilename  = tbItemImportFile.getOriginalFilename();
+		//写入磁盘的文件
+		File file = new File(IMPORT_ITEM_EXCEL_PRE+UUIDBuild.getUUID()+originalFilename.substring(originalFilename.lastIndexOf(".")));
+		if(!file.exists()){
+			//如果文件目录 不存在则创建
+			file.mkdirs();
+		}
+		
+		//将内存中的文件写磁盘
+		tbItemImportFile.transferTo(file);
+		//上传文件磁盘上路径 
+		String absolutePath = file.getAbsolutePath();
+		
+		return tbItemImportService.importTbItem(absolutePath);
+	
+	}
+
 }

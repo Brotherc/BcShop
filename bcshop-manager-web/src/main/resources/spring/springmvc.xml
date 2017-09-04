@@ -44,6 +44,7 @@
 		<property name="jsonMessageConverter" ref="jsonMessageConverter"></property>
 	</bean>
 	
+	
 	<!-- 引用dubbo服务 -->
 	<dubbo:application name="bcshop-manager-web"/>
 	<dubbo:registry protocol="zookeeper" address="192.168.181.152:2181"/>	
@@ -57,4 +58,5 @@
 	<dubbo:reference interface="cn.brotherchun.bcshop.service.ManagerService" id="managerService" />
 	<dubbo:reference interface="cn.brotherchun.bcshop.service.RoleService" id="roleService" />
 	<dubbo:reference interface="cn.brotherchun.bcshop.service.DictInfoService" id="dictInfoService" />
+	<dubbo:reference interface="cn.brotherchun.bcshop.service.TbItemImportService" id="tbItemImportService" />
 </beans>

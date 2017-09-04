@@ -1,5 +1,7 @@
 package cn.brotherchun.bcshop.service;
 
+import java.util.List;
+
 import cn.brotherchun.bcshop.common.pojo.EasyUIDataGridResult;
 import cn.brotherchun.bcshop.common.utils.BcResult;
 import cn.brotherchun.bcshop.pojo.TbItem;
@@ -89,4 +91,12 @@ public interface TbItemService {
 	 * @throws Exception
 	 */
 	public BcResult deleteTbItem(Long tbItemId) throws Exception;
+	
+	/**
+	 * 通过条件查询商品信息
+	 * @param tbItem 封装条件的商品
+	 * @return
+	 * @throws Exception
+	 */
+	public List<TbItem> getTbItemList(TbItem tbItem) throws Exception;
 }

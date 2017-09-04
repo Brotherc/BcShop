@@ -21,6 +21,8 @@
 </div>
 <div id="itemImportWindow" class="easyui-window" title="导入商品" data-options="modal:true,closed:true,iconCls:'icon-save',href:'/item-import'" style="width:60%;height:50%;padding:10px;">
 </div>
+<div id="itemSearchWindow" class="easyui-window" title="搜索商品" data-options="modal:true,closed:true,iconCls:'icon-search',href:'/item-search'" style="width:35%;height:60%;padding:10px;">
+</div>
 <script>
 
     function getSelectionsIds(){
@@ -41,6 +43,18 @@
         	$(".tree-title:contains('新增商品')").parent().click();
         }
     }, {
+		text : '搜索',
+		iconCls : 'icon-search',
+        handler:function(){
+        	$("#itemSearchWindow").window("open");
+        }
+	}, {
+		text : '导出',
+		iconCls : 'icon-undo',
+        handler:function(){
+        	$("#itemSearchWindow").window("open");
+        }
+	}, {
 		text : '导入',
 		iconCls : 'icon-redo',
         handler:function(){

@@ -1,6 +1,8 @@
 package cn.brotherchun.bcshop.manager.controller;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import cn.brotherchun.bcshop.common.pojo.EasyUIDataGridResult;
 import cn.brotherchun.bcshop.common.utils.BcResult;
+import cn.brotherchun.bcshop.common.utils.ExcelExportSXXSSF;
 import cn.brotherchun.bcshop.common.utils.UUIDBuild;
 import cn.brotherchun.bcshop.pojo.TbItem;
 import cn.brotherchun.bcshop.service.TbItemImportService;
@@ -28,6 +31,8 @@ public class TbItemController {
 	
 	@Value("${IMPORT_ITEM_EXCEL_PRE}")
 	private String IMPORT_ITEM_EXCEL_PRE;
+	@Value("${OUTPORT_ITEM_EXCEL_PRE}")
+	private String OUTPORT_ITEM_EXCEL_PRE;
 	
 	//测试通过id获取商品
 	@RequestMapping("/tbitem/{id}")
@@ -101,7 +106,7 @@ public class TbItemController {
 		return new BcResult().ok();
 	}
 	
-	//药品导入提交
+	//商品导入提交
 	@RequestMapping("/tbitem/import")
 	public @ResponseBody BcResult importTbItem(
 			//写上传的文件
@@ -125,5 +130,61 @@ public class TbItemController {
 		return tbItemImportService.importTbItem(absolutePath);
 	
 	}
+	
+	// 商品导出提交
+	@RequestMapping("/tbitem/output")
+	public @ResponseBody BcResult exportTbItem(TbItem tbItem) throws Exception {
 
+		// 调用封装类执行导出
+
+		// 导出文件存放的路径，并且是虚拟目录指向的路径
+		String filePath = OUTPORT_ITEM_EXCEL_PRE;
+		// 导出文件的前缀
+		String filePrefix = "items";
+		// -1表示关闭自动刷新，手动控制写磁盘的时机，其它数据表示多少数据在内存保存，超过的则写入磁盘
+		int flushRows = 100;
+
+		// 定义导出数据的title
+		List<String> fieldNames = new ArrayList<String>();
+		fieldNames.add("标题");
+		fieldNames.add("卖点");
+		fieldNames.add("价格");
+		fieldNames.add("库存");
+		fieldNames.add("条形码");
+		fieldNames.add("图片地址");
+		fieldNames.add("类目");
+		fieldNames.add("状态");
+
+		// 告诉导出类数据list中对象的属性，让ExcelExportSXXSSF通过反射获取对象的值
+		List<String> fieldCodes = new ArrayList<String>();
+		fieldCodes.add("title");// 标题
+		fieldCodes.add("sellPoint");// 卖点
+		fieldCodes.add("price");
+		fieldCodes.add("num");
+		fieldCodes.add("barcode");
+		fieldCodes.add("image");
+		fieldCodes.add("cid");
+		fieldCodes.add("status");
+
+		// ....
+
+		// 注意：fieldCodes和fieldNames个数必须相同且属性和title顺序一一对应，这样title和内容才一一对应
+
+		// 开始导出，执行一些workbook及sheet等对象的初始创建
+		ExcelExportSXXSSF excelExportSXXSSF = ExcelExportSXXSSF.start(filePath,
+				"/upload/", filePrefix, fieldNames, fieldCodes, flushRows);
+
+		// 导出的数据通过service取出
+		List<TbItem> list = tbItemService.getTbItemList(tbItem);
+
+		// 执行导出
+		excelExportSXXSSF.writeDatasByObject(list);
+		// 输出文件，返回下载文件的http地址，已经包括虚拟目录
+		String webpath = excelExportSXXSSF.exportFile();
+
+		System.out.println(webpath);
+
+		return BcResult.ok();
+	}
+	
 }

@@ -275,4 +275,53 @@ public class TbItemServiceImpl implements TbItemService{
 		return null;
 	}
 
+	@Override
+	public List<TbItem> getTbItemList(TbItem tbItem) throws Exception {
+		TbItemExample tbItemExample=new TbItemExample();
+		TbItemExample.Criteria criteria = tbItemExample.createCriteria();
+		if(tbItem!=null){
+			Long id = tbItem.getId();
+			if(id!=null){
+				criteria.andIdEqualTo(id);
+			}
+			String sellPoint = tbItem.getSellPoint();
+			if(StringUtils.isNoneBlank(sellPoint)){
+				criteria.andSellPointEqualTo(sellPoint);
+			}
+			Long price = tbItem.getPrice();
+			if(price!=null){
+				criteria.andPriceEqualTo(price);
+			}
+			Integer num = tbItem.getNum();
+			if(num!=null){
+				criteria.andNumEqualTo(num);
+			}
+			String barcode = tbItem.getBarcode();
+			if(StringUtils.isNoneBlank(barcode)){
+				criteria.andBarcodeEqualTo(barcode);
+			}
+			String image = tbItem.getImage();
+			if(StringUtils.isNoneBlank(image)){
+				criteria.andImageEqualTo(image);
+			}
+			Long cid = tbItem.getCid();
+			if(cid!=null){
+				criteria.andCidEqualTo(cid);
+			}
+			Byte status = tbItem.getStatus();
+			if(status!=null){
+				criteria.andStatusEqualTo(status);
+			}
+			Date created = tbItem.getCreated();
+			if(created!=null){
+				criteria.andCreatedEqualTo(created);
+			}
+			Date updated = tbItem.getUpdated();
+			if(updated!=null){
+				criteria.andUpdatedEqualTo(updated);
+			}
+		}
+		return tbItemMapper.selectByExample(tbItemExample);
+	}
+
 }
